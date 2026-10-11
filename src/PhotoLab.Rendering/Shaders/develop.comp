@@ -1,0 +1,37 @@
+#version 450
+layout(local_size_x = 64) in;
+layout(set = 0, binding = 0, std430) readonly buffer InputPixels { vec4 source[]; };
+layout(set = 0, binding = 1, std430) writeonly buffer OutputPixels { vec4 result[]; };
+layout(push_constant) uniform Settings {
+    uint count; uint neutral;
+    float exposure; float red; float green; float blue;
+    float contrast; float highlights; float shadows; float saturation; float vibrance;
+} settings;
+float mask(float start, float end, float value)
+{
+    precise float t = clamp((value - start) / (end - start), 0.0, 1.0);
+    return t * t * (3.0 - 2.0 * t);
+}
+void main()
+{
+    uint group = gl_WorkGroupID.y * gl_NumWorkGroups.x + gl_WorkGroupID.x;
+    uint index = group * 64 + gl_LocalInvocationID.x;
+    if (index >= settings.count) return;
+    vec4 pixel = source[index];
+    if (settings.neutral != 0) { result[index] = pixel; return; }
+    // Match the CPU's linear light -> tone -> contrast -> color order; do not clip RGB.
+    precise vec3 color = pixel.rgb * settings.exposure;
+    color = color * vec3(settings.red, settings.green, settings.blue);
+    precise float lum = max(0.0, 0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b);
+    precise float high = mask(0.32, 0.95, lum);
+    precise float shadow = 1.0 - mask(0.035, 0.45, lum);
+    precise float gain = max(0.05, 1.0 + settings.highlights * high * 0.65 + settings.shadows * shadow * 0.75);
+    color = color * gain;
+    precise float contrast = 1.0 + settings.contrast * 0.70;
+    color = (color - vec3(0.18)) * contrast + vec3(0.18);
+    precise float y = 0.2126 * color.r + 0.7152 * color.g + 0.0722 * color.b;
+    precise float chroma = max(color.r, max(color.g, color.b)) - min(color.r, min(color.g, color.b));
+    precise float saturation = max(0.0, 1.0 + settings.saturation + settings.vibrance * (1.0 - clamp(chroma * 2.0, 0.0, 1.0)) * 0.8);
+    color = vec3(y) + (color - vec3(y)) * saturation;
+    result[index] = vec4(color, pixel.a);
+}

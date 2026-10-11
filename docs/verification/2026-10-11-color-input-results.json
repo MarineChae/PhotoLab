@@ -1,0 +1,64 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.35
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 57,
+    "seconds": 0.345
+  },
+  "Rendering": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.472
+  },
+  "RenderingGPU": {
+    "exitCode": 0,
+    "checks": 50,
+    "seconds": 0.992
+  },
+  "RawGPU": {
+    "exitCode": 0,
+    "checks": 24,
+    "seconds": 4.692
+  },
+  "ColorProfile": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.387
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 209,
+    "seconds": 14.421
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 47,
+    "seconds": 5.644
+  },
+  "UIVulkan": {
+    "exitCode": 0,
+    "checks": 48,
+    "seconds": 5.652
+  },
+  "NativeSession": {
+    "exitCode": 0,
+    "checks": 80,
+    "seconds": 7.244
+  },
+  "CachedLoader": {
+    "exitCode": 0,
+    "checks": 45,
+    "seconds": 7.608
+  },
+  "NativeUIAdaptive": {
+    "exitCode": 0,
+    "checks": 72,
+    "seconds": 60.39
+  },
+  "totalChecks": 666,
+  "scope": "macOS ARM64 Apple M4; CPU/GPU/UI variants included; input ICC through existing Skia; LCMS/monitor/16-bit standard decoding still pending"
+}

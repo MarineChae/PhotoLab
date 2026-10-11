@@ -1,0 +1,243 @@
+[Core]
+PASS: Zero settings preserve image bytes
+PASS: Processing does not alias input buffer
+PASS: Positive exposure brightens non-clipped pixels
+PASS: Alpha is preserved
+PASS: Original input is never modified
+PASS: Desaturation creates grayscale pixel
+PASS: Histogram returns channel counts
+PASS: Sidecar JSON round-trip
+PASS: Nikon NEF routes to shared RAW backend
+PASS: Sony/Fuji/DNG extensions route to shared RAW backend
+PASS: JPEG remains on the standard decoder path
+PASS: Other extensions are not advertised
+PASS: PPM 8-bit dimensions
+PASS: PPM 8-bit pixel values, including header-like bytes, are preserved
+PASS: PPM 16-bit big-endian channel values are converted to RGBA8
+PASS: Grayscale PGM fallback is supported
+All core tests passed.
+
+[Imaging]
+PASS: Adjacent 16-bit samples remain distinct
+PASS: Buffer identifies stride, precision and linear working color space
+PASS: Neutral edits preserve every float sample exactly
+PASS: Exposure retains values above display white and sub-8-bit detail
+PASS: Float processing preserves alpha
+PASS: Exposure recovery survives without intermediate clipping
+PASS: Float processing leaves source untouched
+PASS: All 256 sRGB and alpha values round-trip exactly
+PASS: Float pipeline matches existing basic adjustments at the RGBA8 display boundary
+PASS: Non-finite input samples rejected
+PASS: Invalid alpha rejected
+PASS: Mismatched dimensions rejected
+PASS: Non-finite settings rejected
+PASS: cancellation checked before neutral fast path
+PASS: disposed pooled buffer inaccessible and double disposal safe
+PASS: Separate processed buffer remains valid after other buffers are disposed
+PASS: Linear PPM retains adjacent 16-bit big-endian samples
+PASS: Binary sample bytes resembling header characters preserved
+PASS: truncated PPM rejected
+PASS: low-precision RAW intermediate rejected
+PASS: Preview averages in linear light rather than gamma-encoded values
+PASS: Transparent pixels do not bleed hidden colors into previews
+PASS: Same-size preview preserves all samples including hidden RGB
+PASS: float overflow rejected without returning invalid pixels
+PASS: Exposure precedes contrast about the 0.18 pivot
+PASS: Highlight mask uses luminance after exposure
+PASS: Ten repeated pipeline executions are float-deterministic
+PASS: RAW result ownership transfer survives wrapper disposal
+PASS: RAW ownership can transfer only once
+PASS: disposing RAW result releases owned pixels
+PASS: Camera matrix owns its values and absent fourth WB channel is preserved
+PASS: camera matrix requires three rows and four columns
+PASS: non-finite camera matrix rejected
+PASS: missing primary WB coefficient rejected
+PASS: Camera WB normalization preserves ratios and absent fourth channel at tiny common scales
+PASS: Camera WB normalization includes the fourth physical channel
+PASS: Unrepresentable camera WB ratios rejected before native processing
+PASS: Negative fourth camera WB channel rejected
+PASS: Infinite camera WB input rejected
+All imaging tests passed.
+
+[Desktop]
+PASS: PNG lossless pixel round-trip
+PASS: App loader uses float processing for PNG
+PASS: App preview retains float data and original dimensions
+PASS: Preview resizes while retaining original dimensions
+PASS: JPEG export decodes at full dimensions
+PASS: Editing and export preserve source bytes
+PASS: Direct original overwrite rejected
+PASS: Normalized original path rejected
+PASS: Symlink to source rejected
+PASS: Source through directory symlink rejected
+PASS: Hard-link test fixture created
+PASS: Export replaces hard link without modifying source inode
+PASS: Existing destination replaced without trailing bytes
+PASS: cancelled export rejected
+PASS: Cancelled export preserves existing destination
+PASS: Temporary export files cleaned up
+PASS: Source unchanged after all rejected exports
+PASS: corrupt image rejected
+PASS: Non-cancellable obsolete render discarded
+PASS: Superseded queued render cancelled
+PASS: Latest render returned without overlapping CPU work
+PASS: Image switch invalidates completed preview
+PASS: Rendering resumes after invalidation
+PASS: Closing invalidates preview results
+PASS: App renderer quantizes only after float adjustment
+PASS: Source drain invalidates rendered frame before buffer disposal
+PASS: Slider drag retains only the final history state
+PASS: One undo restores state before slider drag
+PASS: Redo restores final slider state
+PASS: New edit removes abandoned redo branch
+PASS: History remains bounded and keeps latest edit
+PASS: Grouped undo survives history trimming
+PASS: Opening a photo resets history to its restored settings
+PASS: Versioned store reads existing legacy edit files
+PASS: Versioned edit files round-trip and remain compatible with the Core reader
+PASS: cancelled edit save rejected
+PASS: Cancelled edit save preserves previous JSON
+PASS: Invalid settings rejected before writing
+PASS: Invalid settings preserve previous JSON
+PASS: Unknown edit version rejected
+PASS: Malformed edit JSON rejected
+PASS: Edit file symlink to original rejected
+PASS: Versioned edit saves preserve photograph bytes
+PASS: App full-resolution loader uses injected decoder without precision loss
+PASS: App preview passes decoder metadata without extension-based camera inference
+PASS: loader releases full decoded surface after creating preview
+PASS: Existing three-value preview API remains compatible
+PASS: Injected RAW decoder also serves the legacy RGBA8 API
+PASS: Injected decoder failure reaches caller
+PASS: non-cooperative RAW completion rejected after cancellation
+PASS: cancelled late RAW result releases pixels
+PASS: Full loader forwards camera WB to developer without post-sRGB gains
+PASS: Preview loader preserves explicit WB metadata and developed pixels
+PASS: developed full surface released after preview creation
+PASS: decoder without development capability rejects explicit WB
+PASS: camera WB cannot be applied to standard image inputs
+PASS: invalid WB rejected before source or native access
+PASS: explicit development honors pre-cancellation
+PASS: late non-cooperative development rejected after cancellation
+PASS: late development surface disposed on cancellation
+PASS: Camera identity uses normalized native fields and handles CRLF
+PASS: Capture fields after camera identity include fractional shutter, ISO and aperture
+PASS: Native capture decimal parsing is independent of UI culture
+PASS: Non-finite, zero and invalid capture fields remain unavailable
+PASS: Negative and infinite capture fields remain unavailable
+PASS: Multiline filename cannot inject capture values
+PASS: Color metadata lookup does not load unrelated global libraries
+PASS: native metadata read honors pre-cancellation before loading
+PASS: Multiline filename cannot inject camera metadata into helper output
+PASS: Unknown metadata output does not invent camera identity
+PASS: Unavailable metadata helper reports a warning without rejecting the decoded image
+PASS: Slow metadata helper is terminated and reported as unavailable
+BENCHMARK: 600x400 linear float + PNG, 60 requests, 1.082s input, 60 frames during input (55.4/s), accepted request p95 10.71ms; service-only measurement, excludes UI Bitmap decode/presentation.
+PASS: Real RAW camera identity extracted: cr2.cr2
+CAMERA: cr2.cr2 Canon EOS 40D
+PASS: Real RAW ISO and shutter extracted: cr2.cr2
+PASS: Real RAW native WB and camera matrix extracted: cr2.cr2
+COLOR: cr2.cr2 LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 1918, Channel1 = 1171, Channel2 = 2241, Channel3 = 1171 }, ISO 100, shutter 1.3, f/8
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: cr2.cr2
+PASS: Custom WB changes actual RAW development while retaining precision: cr2.cr2
+PASS: Actual app WB preview matches full development at the same settings: cr2.cr2
+PASS: Independent LibRaw custom-WB reference succeeds: cr2.cr2
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: cr2.cr2
+WB: cr2.cr2, reference max error 0, >256 levels, culture-independent development
+PASS: Custom WB float processing exports at full source resolution: cr2.cr2
+PASS: Real RAW retains more than 256 red-channel levels: cr2.cr2
+PASS: Real RAW float preview and JPEG encoding: cr2.cr2
+PASS: Real RAW full-resolution atomic export decodes: cr2.cr2
+PASS: Real RAW source hash preserved: cr2.cr2
+RAW: cr2.cr2 1944x1296, metadata/preview/full-export 0.89s
+PASS: Real RAW camera identity extracted: cr3.cr3
+CAMERA: cr3.cr3 Canon EOS R6
+PASS: Real RAW ISO and shutter extracted: cr3.cr3
+PASS: Real RAW native WB and camera matrix extracted: cr3.cr3
+COLOR: cr3.cr3 LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 1853, Channel1 = 1024, Channel2 = 1667, Channel3 = 1024 }, ISO 100, shutter 0.25, f/25
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: cr3.cr3
+PASS: Custom WB changes actual RAW development while retaining precision: cr3.cr3
+PASS: Actual app WB preview matches full development at the same settings: cr3.cr3
+PASS: Independent LibRaw custom-WB reference succeeds: cr3.cr3
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: cr3.cr3
+WB: cr3.cr3, reference max error 0, >256 levels, culture-independent development
+PASS: Custom WB float processing exports at full source resolution: cr3.cr3
+PASS: Real RAW retains more than 256 red-channel levels: cr3.cr3
+PASS: Real RAW float preview and JPEG encoding: cr3.cr3
+PASS: Real RAW full-resolution atomic export decodes: cr3.cr3
+PASS: Real RAW source hash preserved: cr3.cr3
+RAW: cr3.cr3 3407x2271, metadata/preview/full-export 1.74s
+PASS: Real RAW camera identity extracted: nef.nef
+CAMERA: nef.nef Nikon D2H
+PASS: Real RAW ISO and shutter extracted: nef.nef
+PASS: Real RAW native WB and camera matrix extracted: nef.nef
+PASS: Nikon D2H fixture matches archived WB, matrix orientation and aperture
+COLOR: nef.nef LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 563, Channel1 = 256, Channel2 = 373, Channel3 = 256 }, ISO 200, shutter 0.002, f/8
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: nef.nef
+PASS: Custom WB changes actual RAW development while retaining precision: nef.nef
+PASS: Actual app WB preview matches full development at the same settings: nef.nef
+PASS: Independent LibRaw custom-WB reference succeeds: nef.nef
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: nef.nef
+WB: nef.nef, reference max error 0, >256 levels, culture-independent development
+PASS: Custom WB float processing exports at full source resolution: nef.nef
+PASS: Real RAW retains more than 256 red-channel levels: nef.nef
+PASS: Real RAW float preview and JPEG encoding: nef.nef
+PASS: Real RAW full-resolution atomic export decodes: nef.nef
+PASS: Real RAW source hash preserved: nef.nef
+RAW: nef.nef 2482x1648, metadata/preview/full-export 1.23s
+PASS: Real RAW camera identity extracted: arw.arw
+CAMERA: arw.arw Sony ILCE-7S
+PASS: Real RAW ISO and shutter extracted: arw.arw
+PASS: Real RAW native WB and camera matrix extracted: arw.arw
+PASS: Sony fixture unknown f/0 is not displayed as aperture
+COLOR: arw.arw LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 2932, Channel1 = 1024, Channel2 = 1372, Channel3 = 1024 }, ISO 400, shutter 0.004, f/
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: arw.arw
+PASS: Custom WB changes actual RAW development while retaining precision: arw.arw
+PASS: Actual app WB preview matches full development at the same settings: arw.arw
+PASS: Independent LibRaw custom-WB reference succeeds: arw.arw
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: arw.arw
+WB: arw.arw, reference max error 0, >256 levels, culture-independent development
+PASS: Custom WB float processing exports at full source resolution: arw.arw
+PASS: Real RAW retains more than 256 red-channel levels: arw.arw
+PASS: Real RAW float preview and JPEG encoding: arw.arw
+PASS: Real RAW full-resolution atomic export decodes: arw.arw
+PASS: Real RAW source hash preserved: arw.arw
+RAW: arw.arw 2784x1872, metadata/preview/full-export 1.35s
+PASS: Real RAW camera identity extracted: raf.raf
+CAMERA: raf.raf Fujifilm S5000
+PASS: Real RAW ISO and shutter extracted: raf.raf
+PASS: Real RAW native WB and camera matrix extracted: raf.raf
+COLOR: raf.raf LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 146, Channel1 = 80, Channel2 = 110, Channel3 = 80 }, ISO 200, shutter 0.0014705882352941176, f/6.3
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: raf.raf
+PASS: Custom WB changes actual RAW development while retaining precision: raf.raf
+PASS: Actual app WB preview matches full development at the same settings: raf.raf
+PASS: Independent LibRaw custom-WB reference succeeds: raf.raf
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: raf.raf
+WB: raf.raf, reference max error 0, >256 levels, culture-independent development
+PASS: Custom WB float processing exports at full source resolution: raf.raf
+PASS: Real RAW retains more than 256 red-channel levels: raf.raf
+PASS: Real RAW float preview and JPEG encoding: raf.raf
+PASS: Real RAW full-resolution atomic export decodes: raf.raf
+PASS: Real RAW source hash preserved: raf.raf
+RAW: raf.raf 2012x1521, metadata/preview/full-export 0.85s
+PASS: Real RAW camera identity extracted: dng.dng
+CAMERA: dng.dng Pentax K-r
+PASS: Real RAW ISO and shutter extracted: dng.dng
+PASS: Real RAW native WB and camera matrix extracted: dng.dng
+PASS: Pentax DNG absent fourth channel is not treated as alpha
+COLOR: dng.dng LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 1.8710938, Channel1 = 1, Channel2 = 1.546875, Channel3 = 0 }, ISO 400, shutter 0.01, f/11
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: dng.dng
+PASS: Custom WB changes actual RAW development while retaining precision: dng.dng
+PASS: Actual app WB preview matches full development at the same settings: dng.dng
+PASS: Independent LibRaw custom-WB reference succeeds: dng.dng
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: dng.dng
+WB: dng.dng, reference max error 0, >256 levels, culture-independent development
+PASS: Custom WB float processing exports at full source resolution: dng.dng
+PASS: Real RAW retains more than 256 red-channel levels: dng.dng
+PASS: Real RAW float preview and JPEG encoding: dng.dng
+PASS: Real RAW full-resolution atomic export decodes: dng.dng
+PASS: Real RAW source hash preserved: dng.dng
+RAW: dng.dng 4309x2868, metadata/preview/full-export 3.10s
+PASS: Non-RAW payload with RAW extension is rejected by the decoder
+PASS: Rejected RAW payload remains unchanged
+All desktop tests passed.

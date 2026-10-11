@@ -1,0 +1,60 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.381
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 57,
+    "seconds": 0.602
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 206,
+    "seconds": 14.549
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 47,
+    "seconds": 5.535
+  },
+  "NativeSession": {
+    "exitCode": 0,
+    "checks": 80,
+    "seconds": 7.371
+  },
+  "CachedLoader": {
+    "exitCode": 0,
+    "checks": 45,
+    "seconds": 7.645
+  },
+  "NativeUI": {
+    "exitCode": 0,
+    "checks": 72,
+    "seconds": 59.994
+  },
+  "NativeStages": {
+    "exitCode": 0,
+    "checks": 6,
+    "seconds": 3.239
+  },
+  "totalChecks": 529,
+  "scope": "macOS ARM64; UI inputs use Avalonia.Headless/Skia, not native OS presentation",
+  "rawFrameObservations": [
+    "RAW_EDITOR_FRAMES: cr2.cr2, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.640s, 53 observed photo frames (32.3/s), 53 distinct region hashes, observed inter-frame gap p95 54.63ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded.",
+    "RAW_EDITOR_FRAMES: cr3.cr3, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.319s, 49 observed photo frames (37.1/s), 38 distinct region hashes, observed inter-frame gap p95 44.24ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded.",
+    "RAW_EDITOR_FRAMES: nef.nef, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.505s, 60 observed photo frames (39.9/s), 60 distinct region hashes, observed inter-frame gap p95 27.78ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded.",
+    "RAW_EDITOR_FRAMES: arw.arw, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.574s, 60 observed photo frames (38.1/s), 60 distinct region hashes, observed inter-frame gap p95 29.53ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded.",
+    "RAW_EDITOR_FRAMES: raf.raf, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.666s, 52 observed photo frames (31.2/s), 52 distinct region hashes, observed inter-frame gap p95 58.02ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded.",
+    "RAW_EDITOR_FRAMES: dng.dng, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.242s, 32 observed photo frames (25.8/s), 27 distinct region hashes, observed inter-frame gap p95 45.48ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded."
+  ],
+  "nativeStages": [
+    "NATIVE_PREVIEW_STAGES: cr2.cr2, 10 warm same-WB requests, median SDK 9.766ms, conversion/area 7.612ms, awaited total 17.384ms, process-wide managed allocation 42248 bytes; SDK includes native image creation, conversion includes validation/planning, total includes task/gate/release overhead; excludes metadata/open/unpack, UI and native allocation footprint.",
+    "NATIVE_PREVIEW_STAGES: cr3.cr3, 10 warm same-WB requests, median SDK 16.100ms, conversion/area 6.455ms, awaited total 22.595ms, process-wide managed allocation 39224 bytes; SDK includes native image creation, conversion includes validation/planning, total includes task/gate/release overhead; excludes metadata/open/unpack, UI and native allocation footprint.",
+    "NATIVE_PREVIEW_STAGES: nef.nef, 10 warm same-WB requests, median SDK 5.360ms, conversion/area 4.444ms, awaited total 9.783ms, process-wide managed allocation 33032 bytes; SDK includes native image creation, conversion includes validation/planning, total includes task/gate/release overhead; excludes metadata/open/unpack, UI and native allocation footprint.",
+    "NATIVE_PREVIEW_STAGES: arw.arw, 10 warm same-WB requests, median SDK 10.932ms, conversion/area 5.130ms, awaited total 16.165ms, process-wide managed allocation 35032 bytes; SDK includes native image creation, conversion includes validation/planning, total includes task/gate/release overhead; excludes metadata/open/unpack, UI and native allocation footprint.",
+    "NATIVE_PREVIEW_STAGES: raf.raf, 10 warm same-WB requests, median SDK 14.424ms, conversion/area 4.002ms, awaited total 18.426ms, process-wide managed allocation 31512 bytes; SDK includes native image creation, conversion includes validation/planning, total includes task/gate/release overhead; excludes metadata/open/unpack, UI and native allocation footprint.",
+    "NATIVE_PREVIEW_STAGES: dng.dng, 10 warm same-WB requests, median SDK 25.794ms, conversion/area 8.802ms, awaited total 34.584ms, process-wide managed allocation 45184 bytes; SDK includes native image creation, conversion includes validation/planning, total includes task/gate/release overhead; excludes metadata/open/unpack, UI and native allocation footprint."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.373
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 66,
+    "seconds": 0.362
+  },
+  "Rendering": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.843
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 104,
+    "seconds": 2.832
+  },
+  "Presets": {
+    "exitCode": 0,
+    "checks": 21,
+    "seconds": 0.409
+  },
+  "PhotoFolder": {
+    "exitCode": 0,
+    "checks": 7,
+    "seconds": 0.502
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 68,
+    "seconds": 6.096
+  },
+  "VulkanUI": {
+    "exitCode": 0,
+    "checks": 69,
+    "seconds": 6.118
+  },
+  "totalChecks": 360,
+  "scope": "macOS ARM64 read-only discovery, 2000 filename fixture, actual headless folder/image switching with session drafts and CPU/Vulkan UI; thumbnails/catalog/Windows/native picker pending"
+}

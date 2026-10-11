@@ -1,0 +1,54 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.369
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 57,
+    "seconds": 0.35
+  },
+  "Rendering": {
+    "exitCode": 0,
+    "checks": 4,
+    "seconds": 0.725
+  },
+  "RenderingGPU": {
+    "exitCode": 0,
+    "checks": 40,
+    "seconds": 1.178
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 209,
+    "seconds": 14.279
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 47,
+    "seconds": 5.515
+  },
+  "UIVulkan": {
+    "exitCode": 0,
+    "checks": 48,
+    "seconds": 5.512
+  },
+  "NativeSession": {
+    "exitCode": 0,
+    "checks": 80,
+    "seconds": 7.252
+  },
+  "CachedLoader": {
+    "exitCode": 0,
+    "checks": 45,
+    "seconds": 7.373
+  },
+  "NativeUIVulkan": {
+    "exitCode": 0,
+    "checks": 72,
+    "seconds": 61.413
+  },
+  "totalChecks": 618,
+  "scope": "macOS ARM64 Apple M4; UI inputs use Avalonia.Headless/Skia, not native OS presentation"
+}

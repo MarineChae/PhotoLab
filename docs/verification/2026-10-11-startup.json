@@ -1,0 +1,7 @@
+{
+  "alive_for_five_seconds": true,
+  "stdout": "",
+  "stderr": "",
+  "scope": "Startup only, not UI interaction verification",
+  "verified_on": "2026-10-11"
+}

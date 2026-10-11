@@ -1,0 +1,124 @@
+Core
+PASS: Zero settings preserve image bytes
+PASS: Processing does not alias input buffer
+PASS: Positive exposure brightens non-clipped pixels
+PASS: Alpha is preserved
+PASS: Original input is never modified
+PASS: Desaturation creates grayscale pixel
+PASS: Histogram returns channel counts
+PASS: Sidecar JSON round-trip
+PASS: Nikon NEF routes to shared RAW backend
+PASS: Sony/Fuji/DNG extensions route to shared RAW backend
+PASS: JPEG remains on the standard decoder path
+PASS: Other extensions are not advertised
+PASS: PPM 8-bit dimensions
+PASS: PPM 8-bit pixel values, including header-like bytes, are preserved
+PASS: PPM 16-bit big-endian channel values are converted to RGBA8
+PASS: Grayscale PGM fallback is supported
+All core tests passed.
+
+Imaging
+PASS: Adjacent 16-bit samples remain distinct
+PASS: Buffer identifies stride, precision and linear working color space
+PASS: Neutral edits preserve every float sample exactly
+PASS: Exposure retains values above display white and sub-8-bit detail
+PASS: Float processing preserves alpha
+PASS: Exposure recovery survives without intermediate clipping
+PASS: Float processing leaves source untouched
+PASS: All 256 sRGB and alpha values round-trip exactly
+PASS: Float pipeline matches existing basic adjustments at the RGBA8 display boundary
+PASS: Non-finite input samples rejected
+PASS: Invalid alpha rejected
+PASS: Mismatched dimensions rejected
+PASS: Non-finite settings rejected
+PASS: cancellation checked before neutral fast path
+PASS: disposed pooled buffer inaccessible and double disposal safe
+PASS: Separate processed buffer remains valid after other buffers are disposed
+PASS: Linear PPM retains adjacent 16-bit big-endian samples
+PASS: Binary sample bytes resembling header characters preserved
+PASS: truncated PPM rejected
+PASS: low-precision RAW intermediate rejected
+PASS: Preview averages in linear light rather than gamma-encoded values
+PASS: Transparent pixels do not bleed hidden colors into previews
+PASS: Same-size preview preserves all samples including hidden RGB
+PASS: float overflow rejected without returning invalid pixels
+All imaging tests passed.
+
+Desktop
+PASS: PNG lossless pixel round-trip
+PASS: App loader uses float processing for PNG
+PASS: App preview retains float data and original dimensions
+PASS: Preview resizes while retaining original dimensions
+PASS: JPEG export decodes at full dimensions
+PASS: Editing and export preserve source bytes
+PASS: Direct original overwrite rejected
+PASS: Normalized original path rejected
+PASS: Symlink to source rejected
+PASS: Source through directory symlink rejected
+PASS: Hard-link test fixture created
+PASS: Export replaces hard link without modifying source inode
+PASS: Existing destination replaced without trailing bytes
+PASS: cancelled export rejected
+PASS: Cancelled export preserves existing destination
+PASS: Temporary export files cleaned up
+PASS: Source unchanged after all rejected exports
+PASS: corrupt image rejected
+PASS: Non-cancellable obsolete render discarded
+PASS: Superseded queued render cancelled
+PASS: Latest render returned without overlapping CPU work
+PASS: Image switch invalidates completed preview
+PASS: Rendering resumes after invalidation
+PASS: Closing invalidates preview results
+PASS: App renderer quantizes only after float adjustment
+PASS: Source drain invalidates rendered frame before buffer disposal
+PASS: Slider drag retains only the final history state
+PASS: One undo restores state before slider drag
+PASS: Redo restores final slider state
+PASS: New edit removes abandoned redo branch
+PASS: History remains bounded and keeps latest edit
+PASS: Grouped undo survives history trimming
+PASS: Opening a photo resets history to its restored settings
+PASS: Versioned store reads existing legacy edit files
+PASS: Versioned edit files round-trip and remain compatible with the Core reader
+PASS: cancelled edit save rejected
+PASS: Cancelled edit save preserves previous JSON
+PASS: Invalid settings rejected before writing
+PASS: Invalid settings preserve previous JSON
+PASS: Unknown edit version rejected
+PASS: Malformed edit JSON rejected
+PASS: Edit file symlink to original rejected
+PASS: Versioned edit saves preserve photograph bytes
+BENCHMARK: 600x400 linear float + PNG, 60 requests, 1.077s input, 60 frames during input (55.7/s), accepted request p95 9.70ms; service-only measurement, excludes UI Bitmap decode/presentation.
+PASS: Real RAW retains more than 256 red-channel levels: cr2.cr2
+PASS: Real RAW float preview and JPEG encoding: cr2.cr2
+PASS: Real RAW full-resolution atomic export decodes: cr2.cr2
+PASS: Real RAW source hash preserved: cr2.cr2
+RAW: cr2.cr2 1944x1296, decode/preview 0.20s
+PASS: Real RAW retains more than 256 red-channel levels: cr3.cr3
+PASS: Real RAW float preview and JPEG encoding: cr3.cr3
+PASS: Real RAW full-resolution atomic export decodes: cr3.cr3
+PASS: Real RAW source hash preserved: cr3.cr3
+RAW: cr3.cr3 3407x2271, decode/preview 0.45s
+PASS: Real RAW retains more than 256 red-channel levels: nef.nef
+PASS: Real RAW float preview and JPEG encoding: nef.nef
+PASS: Real RAW full-resolution atomic export decodes: nef.nef
+PASS: Real RAW source hash preserved: nef.nef
+RAW: nef.nef 2482x1648, decode/preview 0.30s
+PASS: Real RAW retains more than 256 red-channel levels: arw.arw
+PASS: Real RAW float preview and JPEG encoding: arw.arw
+PASS: Real RAW full-resolution atomic export decodes: arw.arw
+PASS: Real RAW source hash preserved: arw.arw
+RAW: arw.arw 2784x1872, decode/preview 0.35s
+PASS: Real RAW retains more than 256 red-channel levels: raf.raf
+PASS: Real RAW float preview and JPEG encoding: raf.raf
+PASS: Real RAW full-resolution atomic export decodes: raf.raf
+PASS: Real RAW source hash preserved: raf.raf
+RAW: raf.raf 2012x1521, decode/preview 0.21s
+PASS: Real RAW retains more than 256 red-channel levels: dng.dng
+PASS: Real RAW float preview and JPEG encoding: dng.dng
+PASS: Real RAW full-resolution atomic export decodes: dng.dng
+PASS: Real RAW source hash preserved: dng.dng
+RAW: dng.dng 4309x2868, decode/preview 0.83s
+PASS: Non-RAW payload with RAW extension is rejected by the decoder
+PASS: Rejected RAW payload remains unchanged
+All desktop tests passed.

@@ -1,0 +1,11 @@
+{
+  "device": "Apple M4",
+  "validationLayerConfirmed": true,
+  "repeatedChecks": 40,
+  "errors": 0,
+  "shaderSha256": "965609b341c30a883142eb477362dce9daafc26b50c0059a05cd61605d76d314",
+  "maxObservedFloatError": 1.90735e-06,
+  "relativeAbsoluteTolerance": 2e-05,
+  "alphaExact": true,
+  "scope": "GPU control/resource tests, not native OS presentation"
+}

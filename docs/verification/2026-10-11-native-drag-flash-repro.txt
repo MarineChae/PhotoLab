@@ -1,0 +1,44 @@
+PASS: direct preview declares RGBA order, straight alpha and odd row width
+PASS: direct preview owns a copy after source mutation/unpin/collection and preserves visible RGB/alpha
+PASS: direct opaque preview matches the former PNG bitmap's sRGB pixels
+PASS: UI camera metadata enables as-shot controls
+PASS: UI invalid text never develops RAW or adds history
+PASS: UI mouse Apply develops WB and presents changed pixels
+PASS: UI applied WB restores controls and creates undo step
+PASS: UI unchanged Apply does not redevelop or create history
+PASS: UI Original shows camera-default pixels after custom WB
+PASS: UI mouse Save writes the applied full WB state
+PASS: UI reopening restores saved controls and resets history
+PASS: UI As shot resets WB and preserves an undo step
+PASS: UI mouse Undo restores WB pixels and controls
+PASS: UI mouse Redo returns to as-shot pixels
+PASS: UI failed development keeps prior image and history
+PASS: UI undo after failed development still targets the last successful state
+PASS: UI headless Skia produces a complete editor frame
+PASS: UI standard photos hide RAW controls
+PASS: UI missing metadata disables new WB but permits resetting saved WB
+PASS: UI closing during non-cooperative development releases late pixels
+PASS: UI interactive WB stays visible while full quality is blocked
+PASS: UI new WB input presents a new fast frame during old quality development
+PASS: UI obsolete full-quality pixels are released without replacing latest WB
+PASS: UI idle quality upgrade preserves latest WB controls
+PASS: UI quality upgrade adds no undo entry
+PASS: UI failed replacement preserves accepted fast WB pixels
+PASS: UI failed replacement still releases the cancelled previous quality result
+PASS: UI failed WB replacement resumes accepted quality and preserves saved WB
+PASS: UI closing during full-quality upgrade releases late owned pixels
+PASS: UI WB slider remains enabled while its first preview is pending
+PASS: UI many drag samples retain only one pending native request
+PASS: UI WB frame updates before pointer release without moving the current thumb back
+PASS: UI next native preview uses the newest drag value
+Unhandled exception. System.Exception: FAIL: UI same-photo WB refresh retains its accepted frame until the new frame is ready
+   at EditorUiTests.Check(Boolean condition, String message) in /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Desktop.Tests/EditorUiTests.cs:line 125
+   at EditorUiTests.WbDragAsync() in /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Desktop.Tests/EditorUiTests.cs:line 378
+   at EditorUiTests.<>c.<<RunAsync>b__1_0>d.MoveNext() in /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Desktop.Tests/EditorUiTests.cs:line 26
+--- End of stack trace from previous location ---
+   at Avalonia.Headless.HeadlessUnitTestSession.<>c__DisplayClass12_0`1.<DispatchCore>b__0()
+--- End of stack trace from previous location ---
+   at EditorUiTests.RunAsync() in /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Desktop.Tests/EditorUiTests.cs:line 26
+   at EditorUiTests.RunAsync() in /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Desktop.Tests/EditorUiTests.cs:line 31
+   at Program.<Main>$(String[] args) in /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Desktop.Tests/Program.cs:line 27
+   at Program.<Main>(String[] args)

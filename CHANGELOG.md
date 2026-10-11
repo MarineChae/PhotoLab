@@ -1,0 +1,131 @@
+# PhotoLab changelog
+
+## Unreleased
+
+- Added read-only top-level folder discovery using existing photo-format candidates, worker enumeration, cancellation and deterministic case-insensitive filename ordering.
+- Added Open folder, virtualized bounded-height photo list and previous/next selection. Older folder/image requests are canceled/discarded; corrupt candidates and discovery failures keep the accepted image and selection.
+- Preserve accepted unsaved adjustments/camera WB as source-stamped in-window drafts during folder navigation; returning restores parameters with a new per-photo history, while source changes invalidate drafts. Persistent edits still require Save edits.
+- Verified 360 relevant CPU/Vulkan/variant checks including 2,000-file discovery and eight headless folder navigation/error/draft/supersession actions. Updated macOS app and cross-platform CI discovery invocation; thumbnails/catalog/Windows/native folder picker remain pending.
+- Added version-1 portable basic-adjustment presets with bounded/strict JSON validation, safe hashed filenames, Unicode names, case-insensitive identity, atomic save, duplicate rejection, sorted listing and deletion.
+- Added editor preset save/list/temporary preview/apply/delete controls. Preview leaves actual adjustments/history untouched and blocks saves/exports until applied or canceled; applying is one Undo step and preserves the current photo's camera WB.
+- Guard preset list refreshes against late results; apply the same existing render-version checks to transient previews. Added injected stores for isolated headless checks and persistence CI invocation.
+- Verified 346 relevant macOS CPU/Vulkan/variant checks, including 21 store cases and eight real headless preset actions across photos. Windows/native OS interaction and future advanced/raw-WB preset formats remain pending.
+- Stream PNG16 exports through one native RGBA16 row and immediate compressed chunks into the atomic temporary file. The app no longer allocates a full normalized image or encoded result copies for this route; existing buffered encode and native ABI v1 entries remain available.
+- Managed row/write callbacks contain all exceptions before returning to C; native cleanup returns before original exceptions are rethrown. Added atomic streaming writer support while preserving byte/sidecar save behavior.
+- Verified 353 relevant regression checks including six actual RAW exports, byte-identical native buffered/streamed output, partial write failure and mid-stream cancellation with destination/temp-file preservation.
+- Four isolated 20MP runs yielded identical PNG SHA-256. Managed encode allocations fell from 296,404,568 to 66,920 bytes; times remained about 7.8s. Process peak RSS was 861MB buffered versus 740–743MB streamed, including identical source construction; this is not full app memory or the SPEC's JPEG target.
+- Added an owned 256-bin linear RGB/Rec.709-Y histogram with visible-pixel counts, exact endpoint/extended-gamut clipping, cancellation and source-independent lifetime.
+- Publish histogram and RGBA8 preview together under the renderer's existing version gate. Added RGB/Y log-count curves and explicit RGB ≤0/≥1 percentages for the edited preview; new-photo/close clears histogram data.
+- Verified 309 relevant CPU/Vulkan/variant checks, including independently calculated histogram cases, obsolete-frame publication guards, real Skia graph-region pixels and accepted WB frame replacement. The 600x400 service including histogram accepted 60/60 continuous requests at 55.6/s, p95 7.28ms; native OS FPS/full-resolution histogram/Windows remain unverified.
+- Updated the macOS ARM64 app. Core source files and native RAW/GPU kernels were not modified.
+- Added linear float→encoded sRGB RGBA16 conversion and an additive libpng bridge encoder entry. Export declares sRGB/gAMA/cHRM and preserves straight alpha without an intermediate 8-bit surface.
+- Added the editor's opt-in "16-bit PNG" export control and worker encoding through the existing source/link guard and atomic file commit. JPEG and default PNG retain their byte-export path and adjusted-buffer lifetime.
+- Verified 334 relevant macOS checks, including all 65,536 export codes, analytic edited-output error within one code, source/destination preservation on overwrite/cancel/failure, two new headless selection checks and full-resolution PNG16 output from six actual RAW samples. Controlled cancellation inside the native encode row loop passed separately.
+- Updated the macOS ARM64 app/native package and CI export invocation. OS save-dialog interaction, Windows, large-image memory/performance, monitor/LUT references, EXIF and TIFF remain pending.
+- Resolve bundled LittleCMS/PNG16 libraries beside the app automatically, retaining explicit environment overrides and existing fallback when no bundled library is present.
+- Added relocatable macOS color-runtime staging: copied library/license files, relative PNG dependency, host-architecture checks, ad-hoc re-signing and SHA-256 manifest. Native SDK output paths are rejected.
+- Fixed default activation for gray ICC: validate its parsed profile and retain Skia conversion instead of passing gray data to the RGB-only LCMS transform. Added bundled automatic-precision/gray/error tests and kept JPEG's independent Skia reference independent of bundled selection.
+- Verified 231 relocated published-host checks with overrides unset, actual local native library loads, signatures/notices/manifest and published app startup. Added macOS CI packaging/relocation invocation (remote run unverified).
+- Produced a framework-dependent osx-arm64 app with bundled color libraries. Windows packaging, clean-machine installation, full third-party distribution review, signing/notarization, monitor/LUT corpus and 16-bit output remain pending.
+- Added a narrow libpng 1.6.59 C bridge and owned managed decoding path for source-encoded PNG16 RGBA, including grayscale expansion, tRNS, straight alpha, five filters and Adam7 without gamma/premultiplication during decode.
+- PHOTOLAB_PNG16_BRIDGE selects high-precision PNG input. Normalized sRGB float reuses the CPU transfer function without an 8-bit/half-float boundary; original ICC can flow directly to LCMS. Non-sRGB/gAMA retains source-profile float Skia conversion when LCMS is unavailable.
+- Verified all 65,536 sRGB codes remain distinct; maximum analytic transfer error 2.29379e-7 on CPU and 2.97996e-8 on LCMS. Verified 351 relevant regression/variant checks, PNG16 edit/export/original hashes and separate controlled native-row cancellation.
+- Added platform build recipes and macOS CI bridge/precision invocation. Windows/remote CI and packaged default activation remain unverified; export remains sRGB8 and 16-bit output/monitor/LUT corpus are pending.
+- Added an owned LittleCMS RGB ICC→linear sRGB float transform, alpha copying, extended RGB, bounded native calls/cancellation and serialized disposal. Extract original PNG iCCP/JPEG APP2 profiles with bounded decompression and segment validation.
+- PHOTOLAB_LCMS_LIBRARY explicitly selects native JPEG/PNG input conversion without double-applying Skia color management. Untagged input assumes sRGB; non-ICC gamma/chromaticity retains Skia conversion. Export still declares sRGB.
+- Verified 319 relevant macOS regression/variant checks, including 32 native/extraction checks and native-selected headless UI. Added macOS CI native invocation (remote run unverified). Windows runtime/packaging, ICC LUT reference corpus, monitor output and 16-bit standard decoding remain pending.
+- Keep decoded JPEG/PNG source-profile color through float image readback into linear sRGB, preserving negative/above-white working RGB after gamut conversion; legacy byte APIs explicitly decode sRGB.
+- Tag JPEG/PNG exports as sRGB to match encoded output pixels. Added real Display P3 fixture, neutral/alpha/app loader/untagged assumption and export-tag tests plus CI invocation.
+- Verified 666 macOS CPU/GPU/variant checks and Core/fixture hashes. This step uses existing Skia color conversion with 8-bit source decode; LittleCMS/monitor/full ICC coverage/16-bit standard precision and large-image transient memory remain pending.
+- Fixed reproduced blocking CPU recovery after GPU failure: failed-device cleanup now owns the retired processor in a background task, while CPU frames/fallback close proceed independently. Existing Vulkan idle-before-destroy safety remains intact.
+- Exposed retired cleanup completion/failure and verified blocked retirement, close retention, late completion and observable cleanup exception without losing recovered CPU pixels.
+- Verified 657 macOS CPU/GPU/variant checks and 50 active validation repeats. Timeout behavior uses controlled GPU failure/cleanup, not an actual driver hang; permanent native hangs may retain resources until process exit, and actual device-loss/Windows/long-run validation remains pending.
+- Verified 24 actual-RAW CPU/GPU control combinations across six camera modes; maximum float error 2.38419e-7 and display differences at most one channel code value (a few bytes), rather than claiming exact displayed parity.
+- Paired DNG measurements showed CPU faster for 600px (1.593ms vs GPU 1.866ms) and GPU faster for 1800px combined controls (11.153ms vs CPU 15.609ms). Opt-in processing now selects CPU for interactive previews up to 600x600 and retains lazy/persistent GPU quality processing; status reports the processor actually used.
+- Verified 649 macOS CPU/GPU/variant checks and 46 repeated active validation checks, including adaptive CPU/GPU transitions, invalid controls before upload, overflow rejection and prior lifetime/raw-input regressions. Windows/other GPUs, long-run/device-loss/timeout and ICC remain pending.
+- Added PhotoLab.Rendering with persistent Vulkan float buffers/pipeline/descriptor/command/fence, immutable source-upload reuse, capacity growth, barriers, cancellation after fence and two-dimensional dispatch.
+- Shared CPU/GPU validation/gain preparation and ported all basic linear float controls with neutral/HDR/negative-RGB/alpha preservation. Added lazy worker initialization, owned CPU fallback and explicit PHOTOLAB_VULKAN_LIBRARY preview selection with actual backend status.
+- Renderer close now releases the owned processor after its last worker reader. Verified 618 CPU/GPU/variant checks on macOS, including hardware control parity (maximum observed error 1.90735e-6), resource growth/reuse/4.41MP dispatch, actual editor Vulkan selection and six actual-RAW neutral UI regressions. Repeated 40 hardware tests under active validation without errors.
+- Windows/other GPUs, diverse actual-RAW controls, paired large-image performance, driver-loss/timeout and ICC remain pending. Export retains the CPU path.
+- Added an isolated C# Vulkan compute probe with Silk.NET.Vulkan 2.23.0, explicit buffer barriers/fence/readback/cleanup, portability extension handling, and a linear RGB exposure shader preserving HDR/negative RGB/alpha.
+- Executed 12 GPU cases on Apple M4/MoltenVK with maximum observed CPU-reference error 0, repeated under a confirmed active Khronos validation layer without VUID errors; SPIR-V validation passed. Binding/runtime/tool license sources are recorded.
+- GPU remains a feasibility probe: Windows execution, full control parity, persistent buffers and app integration are pending. ShaderFloat64 is unavailable on the tested GPU, so existing double area accumulation needs separate precision validation.
+- Precompute area-resize axis footprints while preserving all float/coverage rounding; 3.1MP direct conversion medians were 8.276–8.588ms versus 9.176–9.824ms in alternating before/after process runs, with roughly 45KB scratch allocation.
+- Added serialized native SDK/conversion timing snapshots and six-source profiling. Verified 529 checks including every RGB16 value and all actual-RAW regressions. DNG SDK/conversion medians were 25.794/8.802ms, so GPU feasibility remains next.
+- Rejected a measured-slower row-cache/SIMD experiment and retained the faster coverage path. OpenMP 1/2/4/8-thread probes did not justify reducing default threads; no global setting changed.
+- Added direct linear RGB16 area downsampling, sharing coverage geometry with the existing RGBA path and preserving the former float normalization/area-sum rounding.
+- Removed input-sized RGBA32F intermediates and managed RGB16 copies in native processing; borrowed spans stay inside validated native-image ownership and the serialized session gate. Infrastructure enables a narrowly scoped unsafe block; no new package/ABI change.
+- Verified 522 macOS checks, including 150 exact geometry/reference comparisons and all six actual-RAW full/half/lifetime/continuous-WB regressions. Paired 3.1MP conversion medians were 14.646ms/49.4MB allocated versus 9.493ms/40 bytes with warm output pool.
+- Current DNG headless WB observation was 24.1/s, below 30/s. Native/resize/UI profiling and further CPU/GPU optimization remain pending; allocation measurements exclude output footprint/native development/UI.
+- Fixed a reproduced same-photo WB Original flash by retaining the accepted bitmap until its replacement is ready.
+- Added a bounded camera-default float preview cache for zero WB input during dragging, with default CLI full-quality development after idle and cache release on photo replacement/close.
+- Keep exact Warmth/Tint inputs while a pointer is held, including pauses between WB developments; gain-inversion rounding no longer contaminates a zero/as-shot request. Sync accepted controls on release.
+- Verified 517 macOS checks, including 72 actual-RAW native UI checks. Six continuous WB drags match final CLI pixels, one Undo, cached zero and zero-ending default quality. Headless observed rates were 21–40/s; DNG was below 30/s, so RGB16 conversion/intermediate allocation optimization remains next.
+- Added stable tone control names and actual EditorWindow held-mouse input verification, checking Image bitmap replacement against the captured Skia photo-region pixel, interactive size, idle final value, saved state and single Undo/Redo.
+- Verified 485 checks on macOS. Sixty distinct Exposure inputs produced 60 observed photo frames over 1.285s (46.7/s, observation p95 24.04ms with polling/capture). Scope is a synthetic 1800px source/600px interaction in headless Skia; native OS presentation and continuous camera-WB/large actual-RAW performance remain pending.
+- Replaced preview/Original PNG encode/decode with display RGBA8 frames and immutable Skia bitmap copies. Export encoding and linear float processing remain unchanged.
+- Added odd-row/RGBA/straight-alpha/source-mutation/GC ownership checks and opaque pixel comparison against the former PNG display path; all six actual-RAW native UI regressions pass.
+- Verified 480 checks on macOS. Paired synthetic display-cost medians improved from 4.527ms to 0.425ms at 600×400 and 45.650ms to 3.868ms at 1800×1200. Headless float+bitmap construction accepted 58.9 updates/s at 600px; this is not native OS presentation/FPS evidence.
+- Added continuous camera Warmth/Tint sliders for native-preview decoders, coalescing pending inputs and grouping a complete drag into one Undo.
+- Preserve current thumb input during preview completion, defer full-quality development during dragging, and discard pending WB input on photo switch/close.
+- Disable stale thumbs for saved WB outside the relative control model while retaining exact saved coefficients and explicit reset/input.
+- Verified 477 checks on macOS, including 37 controlled UI and 42 actual-RAW native UI checks. Six held-mouse drag results upgrade to independent CLI-equivalent pixels; first-frame headless observations were 103–162ms. Native OS presentation/FPS, Windows and color accuracy remain pending.
+- Connected native half-size WB previews to same-photo input, displaying a 600px frame before an idle full-development/1800px upgrade.
+- Added generation/cancellation guards, safe source replacement, obsolete-output disposal and latest-quality rescheduling; failed replacement preserves the accepted photo's pending upgrade and history.
+- Verified 448 checks including controlled fast/quality races and six actual-RAW first-frame/quality loader and headless UI comparisons. Continuous WB controls and GUI latency/FPS remain pending.
+- Connected native unpack sessions to the default app loader through explicit PHOTOLAB_NATIVE_RAW_BRIDGE selection; unchanged default/legacy paths retain CLI semantics.
+- Added one-photo metadata/session ownership, source stamp invalidation, explicit reopen/reset and async close cleanup; custom WB preview and full/export loading share the native session.
+- Reuse the camera-default Original bitmap during same-source WB refresh while retaining safe bitmap ownership.
+- Verified 427 checks including 39 cache-loader cases and 18 actual-RAW headless UI cases across six formats. Half-size interactive/idle integration, native OS input and Windows remain pending.
+- Added an explicit native RAW session backend and small SDK-built C++ bridge, retaining unpacked sensor data for repeated full/custom-WB and half-size preview development without rereading the source.
+- Added opaque-handle ABI/version checks, callback lifetime/owner cancellation, serialized native work, SafeHandle module ownership, and precision-preserving RGB16-to-float expansion.
+- Matched LibRaw's odd Bayer active-size crop during cached half development and restore full geometry afterward; six actual RAW full/half results agree with independent CLI references.
+- Verified 370 checks on macOS including 80 native-session checks. The bridge is not the default UI decoder; Windows native build, realtime UI integration and unclipped sensor-float processing remain pending.
+- Fixed a reproduced Image.Render/Bitmap.Size exception during RAW/WB refresh by detaching displayed bitmaps before disposal; preview replacement and window close use the same ownership order.
+- Added loader injection and a direct local-photo opening entry point, stable control names, and 17 headless Skia text/mouse input tests covering WB, Original, persistence/history, failure and late-close cleanup.
+- Added test-only Avalonia.Headless 11.3.22 (MIT) and Windows/macOS CI invocation. Verified 287 checks locally on macOS; native OS input, Windows execution and realtime WB caching remain pending.
+- Added RAW-only relative camera Warmth/Tint inputs with Apply WB and As shot, backed by original RAW development and existing full-state persistence/history/export.
+- Added camera-channel adjustment math and inverse control restoration; unrepresentable saved WB remains unchanged and unchanged Apply avoids display-rounding history changes.
+- Verified 270 checks on macOS including control endpoints and six actual RAW relative-WB save/restore/develop comparisons. GUI input, realtime camera-data caching, neutral picker and Kelvin remain pending.
+- Added immutable PhotoEditState and full-state history for tone controls plus camera WB, preserving legacy history entry points and grouped/bounded behavior.
+- Added atomic version 2 camera-WB sidecars and version 1 compatibility, strict WB schema checks, guarded legacy writes and process-local serialization across store instances.
+- Connected saved WB to app loading/export, camera-default Original comparison, and transactional WB-changing reset/Undo/Redo. Camera-WB selection UI and realtime WB caching remain pending.
+- Verified 255 checks on macOS, including 20 modern/legacy write races and six real RAW save/restore/develop/export round-trips. Full GUI input and Windows checks remain pending.
+- Added IRawDeveloper and explicit camera-channel WB development in LibRawDecoder and float app-loader APIs; user WB is applied before demosaic/color conversion, with original AsShot metadata preserved.
+- Kept default camera-WB and legacy APIs; custom development excludes -w (which would overwrite -r), retains embedded camera matrices with +M, normalizes safe coefficient ratios and formats native arguments invariantly.
+- Added developer forwarding/ownership/cancellation checks and six-camera comparisons against independent LibRaw custom-WB outputs, matching app previews and full-resolution exports. User WB UI/persistence/realtime caching, Kelvin and visual color accuracy remain pending.
+- Added optional full-float LibRaw C getter extraction of as-shot WB and row-major 3x4 camera-to-sRGB metadata with scoped native cleanup; existing developed pixels are unchanged.
+- Added invariant ISO/shutter/aperture parsing and capture display, excluding unavailable/invalid values and protecting against multiline filename injection.
+- Verified 160 checks on macOS including six real RAW captures/color metadata, Nikon reference coefficients, unknown Sony aperture and absent DNG fourth WB channel; Windows, camera-space WB, ICC and visual color accuracy remain pending.
+- Split float processing into explicit light, tone, contrast and color stages while preserving reference results; added ordering and repeated-float determinism checks.
+- Added IRawDecoder, typed RAW metadata and single-owner decoded surfaces with explicit ownership transfer. Modern and injected legacy loader paths now support decoder replacement.
+- Moved native LibRaw execution to Infrastructure and retained existing Desktop entry points and three-value preview API compatibility.
+- Added optional raw-identify camera make/model extraction and app display, with warnings for unavailable/unknown/slow helpers, bounded process lifetime and multiline-filename protection.
+- Verified the decoder changes with 134 checks on macOS, including six real RAW camera identities, full-resolution exports and unchanged source hashes. Windows, full EXIF/WB/ICC and GPU validation remain pending.
+- Added atomic local exports with original-path and symlink protection; replacing a hard-linked destination preserves the source inode.
+- Added immediate, serial, versioned preview rendering, cached 600px interaction previews and 180ms idle upgrades to the larger preview. Image loading now cancels superseded selections.
+- Added drag-grouped Undo/Redo with a 128-state history limit.
+- Added PhotoLab.Imaging linear sRGB RGBA32F buffers, precision-preserving 16-bit input, float basic adjustments, alpha-aware linear preview resizing, and explicit buffer ownership.
+- Connected linear LibRaw 16-bit output (-4) and float processing to app previews and full-resolution exports; RGBA8 conversion happens at display/encoding boundaries.
+- Added Desktop/Imaging regression runners to the solution and Windows/macOS CI, plus a checksummed CC0 manifest and downloader for six real camera RAW fixtures.
+- Moved the canonical tracker and agent guidelines to TASKS.md and AGENTS.md while retaining compatibility links at Task.md and Agent.md.
+- Added PhotoLab.Infrastructure with shared atomic writes/source protection and versioned JSON edit storage; legacy flat files and the existing Core reader remain compatible.
+- Verified six CC0 real RAW fixtures through float decoding, preview and full-resolution JPEG export; preserved a repository sample containing JPEG under a DNG extension as a rejection fixture.
+- Fixed CS0136 in the Core smoke-test runner by renaming the PGM stream variable; all 16 existing smoke checks pass on macOS ARM64 with .NET SDK 10.0.102.
+- Added TASK-002 validation results for local-cache NuGet restore, project references and launch-script review; Desktop builds and platform runtime checks remain pending.
+- Added TASK-001 source analysis covering project dependencies, implemented features, differences from Spec.md, and follow-up priorities.
+- Recorded the existing Core smoke-test compilation failure (CS0136), SDK availability, and remaining build/runtime/platform validation in Task.md and docs/TASK-001-analysis.md.
+- TASK-001 made documentation-only changes; later autonomous development added the app/Imaging/Infrastructure changes above. Core source remains unchanged and no release version was incremented.
+
+## 0.1.1 — multi-camera RAW input (experimental)
+
+- Shared RAW file recognition for Canon, Nikon, Sony, Fujifilm, Olympus/OM, Panasonic, DNG, Pentax and other LibRaw families.
+- `LibRawCommandDecoder` runs the external `dcraw_emu` process with correctly separated arguments and isolated temporary outputs.
+- `PpmImageCodec` decodes 8/16-bit binary PPM and grayscale PGM data to the current 8-bit editor buffer.
+- Same image loader is used for on-screen previews and full-size export.
+- Added RAW-related core smoke tests, Windows/macOS installation notes, and external decoder override.
+- Limitations: requires separate LibRaw installation; not an end-to-end high-bit-depth RAW pipeline; not yet compiled/tested in target OS.
+
+## 0.1.0 — first editor prototype
+
+- Avalonia-based desktop editor, JPEG/PNG loading/export, CPU edits, preview, edit history and JSON sidecars.

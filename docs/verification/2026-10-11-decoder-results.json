@@ -1,0 +1,31 @@
+{
+  "Core": {
+    "exit_code": 0,
+    "passed_checks": 16
+  },
+  "Imaging": {
+    "exit_code": 0,
+    "passed_checks": 30
+  },
+  "Desktop": {
+    "exit_code": 0,
+    "passed_checks": 88
+  },
+  "raw_runs": [
+    "RAW: cr2.cr2 1944x1296, metadata/preview/full-export 0.34s",
+    "RAW: cr3.cr3 3407x2271, metadata/preview/full-export 0.70s",
+    "RAW: nef.nef 2482x1648, metadata/preview/full-export 0.50s",
+    "RAW: arw.arw 2784x1872, metadata/preview/full-export 0.54s",
+    "RAW: raf.raf 2012x1521, metadata/preview/full-export 0.38s",
+    "RAW: dng.dng 4309x2868, metadata/preview/full-export 1.31s"
+  ],
+  "camera_metadata": [
+    "CAMERA: cr2.cr2 Canon EOS 40D",
+    "CAMERA: cr3.cr3 Canon EOS R6",
+    "CAMERA: nef.nef Nikon D2H",
+    "CAMERA: arw.arw Sony ILCE-7S",
+    "CAMERA: raf.raf Fujifilm S5000",
+    "CAMERA: dng.dng Pentax K-r"
+  ],
+  "benchmark": "BENCHMARK: 600x400 linear float + PNG, 60 requests, 1.079s input, 60 frames during input (55.6/s), accepted request p95 10.26ms; service-only measurement, excludes UI Bitmap decode/presentation."
+}

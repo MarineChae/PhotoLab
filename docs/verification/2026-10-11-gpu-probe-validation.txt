@@ -1,0 +1,114 @@
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                /Users/haebyeong/Desktop/PhotoLab-MVP/tools/PhotoLab.GpuProbe/bin/Release/net10.0/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /Users/haebyeong/.config/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/etc/xdg/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /etc/xdg/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/etc/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /etc/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /Users/haebyeong/.local/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /usr/local/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /usr/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:             Found no files
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                /Users/haebyeong/Desktop/PhotoLab-MVP/tools/PhotoLab.GpuProbe/bin/Release/net10.0/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /Users/haebyeong/.config/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/etc/xdg/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /etc/xdg/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/etc/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /etc/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /Users/haebyeong/.local/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /usr/local/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /usr/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:             Found no files
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                /Users/haebyeong/Desktop/PhotoLab-MVP/tools/PhotoLab.GpuProbe/bin/Release/net10.0/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /Users/haebyeong/.config/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/etc/xdg/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /etc/xdg/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/etc/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /etc/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /Users/haebyeong/.local/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /usr/local/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /usr/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:             Found no files
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                /Users/haebyeong/Desktop/PhotoLab-MVP/tools/PhotoLab.GpuProbe/bin/Release/net10.0/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /Users/haebyeong/.config/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/etc/xdg/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /etc/xdg/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/etc/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /etc/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /Users/haebyeong/.local/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /usr/local/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /usr/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:             Found no files
+[Vulkan Loader] LAYER:          Searching for implicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                /Users/haebyeong/Desktop/PhotoLab-MVP/tools/PhotoLab.GpuProbe/bin/Release/net10.0/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /Users/haebyeong/.config/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/etc/xdg/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /etc/xdg/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/etc/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /etc/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /Users/haebyeong/.local/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /opt/homebrew/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /usr/local/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:                /usr/share/vulkan/implicit_layer.d
+[Vulkan Loader] LAYER:             Found no files
+[Vulkan Loader] LAYER:          Searching for explicit layer manifest files
+[Vulkan Loader] LAYER:             In following locations:
+[Vulkan Loader] LAYER:                /opt/homebrew/opt/vulkan-validationlayers/share/vulkan/explicit_layer.d
+[Vulkan Loader] LAYER:             Found the following files:
+[Vulkan Loader] LAYER:                /opt/homebrew/opt/vulkan-validationlayers/share/vulkan/explicit_layer.d/VkLayer_khronos_validation.json
+[Vulkan Loader] WARNING | LAYER: env var 'VK_INSTANCE_LAYERS' defined and adding layers "VK_LAYER_KHRONOS_validation"
+[Vulkan Loader] WARNING | LAYER: env var 'VK_INSTANCE_LAYERS' defined and adding layers "VK_LAYER_KHRONOS_validation"
+[Vulkan Loader] DEBUG | LAYER:  Loading layer library libVkLayer_khronos_validation.dylib
+[Vulkan Loader] INFO | LAYER:   Insert instance layer "VK_LAYER_KHRONOS_validation" (/opt/homebrew/Cellar/vulkan-validationlayers/1.4.363.0/lib/libVkLayer_khronos_validation.dylib)
+[Vulkan Loader] LAYER:          vkCreateInstance layer callstack setup to:
+[Vulkan Loader] LAYER:             <Application>
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             <Loader>
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             VK_LAYER_KHRONOS_validation
+[Vulkan Loader] LAYER:                     Type: Explicit
+[Vulkan Loader] LAYER:                     Enabled By: Environment Variable VK_INSTANCE_LAYERS
+[Vulkan Loader] LAYER:                     Manifest: /opt/homebrew/opt/vulkan-validationlayers/share/vulkan/explicit_layer.d/VkLayer_khronos_validation.json
+[Vulkan Loader] LAYER:                     Library:  /opt/homebrew/Cellar/vulkan-validationlayers/1.4.363.0/lib/libVkLayer_khronos_validation.dylib
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] LAYER:             <Drivers>
+DEVICE: Apple M4; type IntegratedGpu; shaderFloat64 False
+[Vulkan Loader] INFO | LAYER:   Inserted device layer "VK_LAYER_KHRONOS_validation" (/opt/homebrew/Cellar/vulkan-validationlayers/1.4.363.0/lib/libVkLayer_khronos_validation.dylib)
+[Vulkan Loader] DRIVER:         vkCreateDevice layer callstack setup to:
+[Vulkan Loader] DRIVER:            <Application>
+[Vulkan Loader] DRIVER:              ||
+[Vulkan Loader] DRIVER:            <Loader>
+[Vulkan Loader] DRIVER:              ||
+[Vulkan Loader] LAYER:             VK_LAYER_KHRONOS_validation
+[Vulkan Loader] LAYER:                     Type: Explicit
+[Vulkan Loader] LAYER:                     Enabled By: Environment Variable VK_INSTANCE_LAYERS
+[Vulkan Loader] LAYER:                     Manifest: /opt/homebrew/opt/vulkan-validationlayers/share/vulkan/explicit_layer.d/VkLayer_khronos_validation.json
+[Vulkan Loader] LAYER:                     Library:  /opt/homebrew/Cellar/vulkan-validationlayers/1.4.363.0/lib/libVkLayer_khronos_validation.dylib
+[Vulkan Loader] LAYER:               ||
+[Vulkan Loader] DRIVER:            <Device>
+[Vulkan Loader] DRIVER:                Using "Apple M4" with driver: "/opt/homebrew/Cellar/molten-vk/1.4.2/lib/libMoltenVK.dylib"
+PASS: GPU linear exposure 1 pixels, gain 0.0625, max error 0, total including allocation/upload/fence/readback 8.422ms
+PASS: GPU linear exposure 1 pixels, gain 1, max error 0, total including allocation/upload/fence/readback 0.618ms
+PASS: GPU linear exposure 1 pixels, gain 1.41421, max error 0, total including allocation/upload/fence/readback 0.503ms
+PASS: GPU linear exposure 1 pixels, gain 16, max error 0, total including allocation/upload/fence/readback 0.503ms
+PASS: GPU linear exposure 37 pixels, gain 0.0625, max error 0, total including allocation/upload/fence/readback 0.493ms
+PASS: GPU linear exposure 37 pixels, gain 1, max error 0, total including allocation/upload/fence/readback 0.430ms
+PASS: GPU linear exposure 37 pixels, gain 1.41421, max error 0, total including allocation/upload/fence/readback 0.428ms
+PASS: GPU linear exposure 37 pixels, gain 16, max error 0, total including allocation/upload/fence/readback 0.431ms
+PASS: GPU linear exposure 240000 pixels, gain 0.0625, max error 0, total including allocation/upload/fence/readback 2.665ms
+PASS: GPU linear exposure 240000 pixels, gain 1, max error 0, total including allocation/upload/fence/readback 2.406ms
+PASS: GPU linear exposure 240000 pixels, gain 1.41421, max error 0, total including allocation/upload/fence/readback 2.373ms
+PASS: GPU linear exposure 240000 pixels, gain 16, max error 0, total including allocation/upload/fence/readback 2.411ms
+[Vulkan Loader] DEBUG | LAYER:  Unloading layer library /opt/homebrew/Cellar/vulkan-validationlayers/1.4.363.0/lib/libVkLayer_khronos_validation.dylib

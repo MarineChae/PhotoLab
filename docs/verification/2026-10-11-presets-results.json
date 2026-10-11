@@ -1,0 +1,44 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.355
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 66,
+    "seconds": 0.36
+  },
+  "Rendering": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.844
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 104,
+    "seconds": 2.681
+  },
+  "Presets": {
+    "exitCode": 0,
+    "checks": 21,
+    "seconds": 0.537
+  },
+  "ColorProfile": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.482
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 60,
+    "seconds": 5.956
+  },
+  "VulkanUI": {
+    "exitCode": 0,
+    "checks": 61,
+    "seconds": 5.887
+  },
+  "totalChecks": 346,
+  "scope": "macOS ARM64 portable eight-control presets, persisted JSON and actual headless preview/apply/Undo/Redo/delete across photos; CPU/Vulkan UI; Windows/native OS interaction and advanced preset parameters pending"
+}

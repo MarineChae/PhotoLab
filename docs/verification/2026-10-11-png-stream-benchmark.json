@@ -1,0 +1,45 @@
+{
+  "runs": [
+    {
+      "mode": "buffered",
+      "width": 5000,
+      "height": 4000,
+      "milliseconds": 7763.8548,
+      "managedAllocatedBytes": 296404568,
+      "fileBytes": 136403465,
+      "sha256": "CA928678A5A30C5169883CAA6603596FFC13E384A1311715B8C5A5CF91783531",
+      "processPeakRssBytes": 860880896
+    },
+    {
+      "mode": "streamed",
+      "width": 5000,
+      "height": 4000,
+      "milliseconds": 7823.4856,
+      "managedAllocatedBytes": 66920,
+      "fileBytes": 136403465,
+      "sha256": "CA928678A5A30C5169883CAA6603596FFC13E384A1311715B8C5A5CF91783531",
+      "processPeakRssBytes": 740032512
+    },
+    {
+      "mode": "streamed",
+      "width": 5000,
+      "height": 4000,
+      "milliseconds": 7866.7038,
+      "managedAllocatedBytes": 66920,
+      "fileBytes": 136403465,
+      "sha256": "CA928678A5A30C5169883CAA6603596FFC13E384A1311715B8C5A5CF91783531",
+      "processPeakRssBytes": 743243776
+    },
+    {
+      "mode": "buffered",
+      "width": 5000,
+      "height": 4000,
+      "milliseconds": 7935.4189,
+      "managedAllocatedBytes": 296404568,
+      "fileBytes": 136403465,
+      "sha256": "CA928678A5A30C5169883CAA6603596FFC13E384A1311715B8C5A5CF91783531",
+      "processPeakRssBytes": 861421568
+    }
+  ],
+  "scope": "isolated 20MP synthetic random RGB/opaque alpha; encode+file-write only; peak RSS includes identical source construction, .NET/native overhead; not complete app/export performance"
+}

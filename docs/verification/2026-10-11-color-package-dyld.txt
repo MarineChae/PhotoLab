@@ -1,0 +1,6 @@
+dyld[65799]: <90454B7C-63B8-3DC0-B465-3F3F090B0A49> /private/tmp/PhotoLab Color Relocated Tests/libPhotoLab.NativePng.dylib
+dyld[65799]: <7477C063-3048-3006-B32F-6A0C0451FCE2> /private/tmp/PhotoLab Color Relocated Tests/libpng16.16.dylib
+dyld[65799]: <C82F20BF-AEC5-32FA-85DC-CA4EEFA06424> /private/tmp/PhotoLab Color Relocated Tests/liblcms2.dylib
+dyld[65799]: <C82F20BF-AEC5-32FA-85DC-CA4EEFA06424> /private/tmp/PhotoLab Color Relocated Tests/liblcms2.dylib
+dyld[65799]: <90454B7C-63B8-3DC0-B465-3F3F090B0A49> /private/tmp/PhotoLab Color Relocated Tests/libPhotoLab.NativePng.dylib
+dyld[65799]: <7477C063-3048-3006-B32F-6A0C0451FCE2> /private/tmp/PhotoLab Color Relocated Tests/libpng16.16.dylib

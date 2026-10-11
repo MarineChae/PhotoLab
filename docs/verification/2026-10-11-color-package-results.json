@@ -1,0 +1,34 @@
+{
+  "Bundled": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.077
+  },
+  "ColorProfile": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.084
+  },
+  "LittleCMS": {
+    "exitCode": 0,
+    "checks": 32,
+    "seconds": 0.112
+  },
+  "PNG16": {
+    "exitCode": 0,
+    "checks": 32,
+    "seconds": 0.164
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 102,
+    "seconds": 2.257
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 47,
+    "seconds": 5.286
+  },
+  "totalChecks": 231,
+  "scope": "relocated macOS ARM64 framework-dependent published test host; overrides unset, automatic native colors; not clean-machine/Windows/installer validation"
+}

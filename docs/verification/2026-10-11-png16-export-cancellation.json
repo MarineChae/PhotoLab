@@ -1,0 +1,7 @@
+{
+  "status": 3,
+  "output": null,
+  "bytes": 0,
+  "rowChecks": 2,
+  "scope": "controlled callback cancellation after first native encode row, separate from timed GUI cancellation"
+}

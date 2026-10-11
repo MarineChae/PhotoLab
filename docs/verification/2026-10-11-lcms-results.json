@@ -1,0 +1,44 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.402
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 57,
+    "seconds": 0.385
+  },
+  "Rendering": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.898
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 102,
+    "seconds": 2.793
+  },
+  "ColorProfile": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.381
+  },
+  "LittleCMS": {
+    "exitCode": 0,
+    "checks": 32,
+    "seconds": 0.437
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 47,
+    "seconds": 5.604
+  },
+  "LittleCMSUI": {
+    "exitCode": 0,
+    "checks": 47,
+    "seconds": 5.743
+  },
+  "totalChecks": 319,
+  "scope": "macOS ARM64; standard JPEG/PNG ICC and headless UI; native RAW/GPU unchanged and not rerun; Windows/LUT corpus/monitor/16-bit input pending"
+}

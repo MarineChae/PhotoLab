@@ -1,0 +1,86 @@
+{
+  "source": "https://raw.pixls.us/",
+  "selected_on": "2026-10-10",
+  "samples": [
+    {
+      "file": "cr2.cr2",
+      "make": "Canon",
+      "model": "EOS 40D",
+      "mode": "sRAW2 (sRAW) (3:2)",
+      "url": "https://raw.pixls.us/getfile.php/2102/nice/Canon - EOS 40D - sRAW2 (sRAW) (3:2).CR2",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "ba644e7dd2abe74eca260e67f0206ff113bf0f62e710f8130611e964d6be5bf1",
+      "size_mb": 5.54
+    },
+    {
+      "file": "cr3.cr3",
+      "make": "Canon",
+      "model": "EOS R6",
+      "mode": "3:2",
+      "url": "https://raw.pixls.us/getfile.php/4659/nice/Canon - EOS R6 - 3:2.CR3",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "74abb0a113d075ad9887a058082f40dd2a938c4813a08474d82356f11a027778",
+      "size_mb": 5.03
+    },
+    {
+      "file": "nef.nef",
+      "make": "Nikon",
+      "model": "D2H",
+      "mode": "12bit 12bit compressed (Lossy (type 1)) (3:2)",
+      "url": "https://raw.pixls.us/getfile.php/5227/nice/Nikon - D2H - 12bit 12bit compressed (Lossy (type 1)) (3:2).NEF",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "155edb938f884ea7372ce98d4ff5f965c3e413b43b95bc9923da6e92082cf914",
+      "size_mb": 3.09
+    },
+    {
+      "file": "arw.arw",
+      "make": "Sony",
+      "model": "ILCE-7S",
+      "mode": "14bit 14bit compressed (3:2)",
+      "url": "https://raw.pixls.us/getfile.php/1582/nice/Sony - ILCE-7S - 14bit 14bit compressed (3:2).ARW",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "a35ebb2fbec929daa5beb20d1ce5c15a8aac7b1a7a231455387f3df8a7442e07",
+      "size_mb": 5.88
+    },
+    {
+      "file": "raf.raf",
+      "make": "Fujifilm",
+      "model": "FinePix S5000",
+      "mode": "4:3",
+      "url": "https://raw.pixls.us/getfile.php/2726/nice/Fujifilm - FinePix S5000 - 4:3.RAF",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "dabd5e74521a6980156be9fd4b88d0c37b0fe4d0e0e6f5c12db8cffff1b76297",
+      "size_mb": 6.53
+    },
+    {
+      "file": "dng.dng",
+      "make": "Pentax",
+      "model": "K-r",
+      "mode": "12bit (3:2)",
+      "url": "https://raw.pixls.us/getfile.php/8172/nice/Pentax - K-r - 12bit (3:2).DNG",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "adc5c155341543e2e5c6de9c0ce87c86cc4629fe90a0f6e68fdf685dcd531b64",
+      "size_mb": 12.78
+    }
+  ],
+  "negative_samples": [
+    {
+      "file": "samsung-mislabeled.dng",
+      "make": "Samsung",
+      "model": "SM-G973U",
+      "mode": "16bit 16bit (2.1132075471698)",
+      "url": "https://raw.pixls.us/getfile.php/3839/nice/Samsung - SM-G973U - 16bit 16bit (2.1132075471698).dng",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sha256": "6492b7e0ac8e012524c0c83606a104cc9bf3b68f30fa60c7b73ffbe4dc584ab1",
+      "size_mb": 1.26,
+      "note": "Repository DNG entry contains a JPEG payload (JFIF signature); LibRaw correctly rejects it."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "validationLayerConfirmed": true,
+  "repeatedChecks": 50,
+  "errors": 0,
+  "timeoutCleanupScope": "controlled GPU; no actual driver hang injected"
+}

@@ -1,0 +1,38 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.399
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 51,
+    "seconds": 0.349
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 206,
+    "seconds": 14.454
+  },
+  "NativeSession": {
+    "exitCode": 0,
+    "checks": 80,
+    "seconds": 7.779
+  },
+  "CachedLoader": {
+    "exitCode": 0,
+    "checks": 45,
+    "seconds": 7.852
+  },
+  "NativeUI": {
+    "exitCode": 0,
+    "checks": 42,
+    "seconds": 34.07
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 40
+  },
+  "totalChecks": 480,
+  "scope": "macOS ARM64; UI inputs use Avalonia.Headless/Skia, not native OS presentation"
+}

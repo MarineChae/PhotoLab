@@ -1,0 +1,7 @@
+PASS: small interactive preview selects CPU without initializing GPU
+PASS: missing GPU initializes a faithful CPU fallback
+PASS: failed GPU initialization is not repeated for each frame
+Unhandled exception. System.Exception: FAIL: CPU fallback returns while failed GPU cleanup is blocked waiting for retirement
+   at Program.<<Main>$>g__Check|0_0(Boolean value, String message) in /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Rendering.Tests/Program.cs:line 8
+   at Program.<Main>$(String[] args) in /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Rendering.Tests/Program.cs:line 42
+   at Program.<Main>(String[] args)

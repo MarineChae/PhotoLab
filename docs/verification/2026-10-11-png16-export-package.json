@@ -1,0 +1,21 @@
+{
+  "directory": "/tmp/PhotoLab macOS arm64",
+  "encoderEntryPresent": true,
+  "manifest": {
+    "platform": "macOS",
+    "architecture": "arm64",
+    "scope": "Color libraries only; ad-hoc signed, not notarized or a complete commercial installer",
+    "sha256": {
+      "libPhotoLab.NativePng.dylib": "81d8a2f3651ec9d2f127d5e82bb0950146b356395cc046a8634372835756e0b8",
+      "libpng16.16.dylib": "708d65cda9079f1edee41f2c65edbe8d12c541ad9f6909e920015b2212e69a3e",
+      "liblcms2.dylib": "d4acf1182a4efa430e8993d28161c2b1e4d044a45988c9c1017313d070b4eb4e",
+      "licenses/libpng-LICENSE.txt": "bdb0a645ea18c60507d0368379b1ac5474b92255fcc2d115e07486a7672ba526",
+      "licenses/LittleCMS-LICENSE.txt": "6dbd60437f8ef91d8de1f08ad75882547fd4931bfcc3566a0735f28db1484d31"
+    }
+  },
+  "startup": {
+    "runningAfter5Seconds": true,
+    "stderr": ""
+  },
+  "scope": "macOS ARM64 package updated; startup only, OS file picker/Windows remain pending"
+}

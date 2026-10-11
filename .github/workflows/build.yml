@@ -1,0 +1,66 @@
+name: Build and smoke tests
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restore
+        run: dotnet restore PhotoLab.slnx
+      - name: Build
+        run: dotnet build PhotoLab.slnx -c Release --no-restore
+      - name: Run core smoke tests
+        run: dotnet run --project tests/PhotoLab.Core.Tests/PhotoLab.Core.Tests.csproj -c Release --no-restore
+      - name: Run rendering fallback tests
+        run: dotnet run --project tests/PhotoLab.Rendering.Tests/PhotoLab.Rendering.Tests.csproj -c Release --no-build
+      - name: Run desktop regression tests
+        run: dotnet run --project tests/PhotoLab.Desktop.Tests/PhotoLab.Desktop.Tests.csproj -c Release --no-build
+      - name: Run preset persistence tests
+        run: dotnet run --project tests/PhotoLab.Desktop.Tests/PhotoLab.Desktop.Tests.csproj -c Release --no-build -- --presets
+      - name: Run read-only photo folder tests
+        run: dotnet run --project tests/PhotoLab.Desktop.Tests/PhotoLab.Desktop.Tests.csproj -c Release --no-build -- --photo-folder
+      - name: Run embedded color profile tests
+        run: dotnet run --project tests/PhotoLab.Desktop.Tests/PhotoLab.Desktop.Tests.csproj -c Release --no-build -- --color-profile
+      - name: Install LittleCMS on macOS
+        if: runner.os == 'macOS'
+        run: brew install little-cms2
+      - name: Run native ICC tests on macOS
+        if: runner.os == 'macOS'
+        run: dotnet run --project tests/PhotoLab.Desktop.Tests/PhotoLab.Desktop.Tests.csproj -c Release --no-build -- --lcms "$(brew --prefix little-cms2)/lib/liblcms2.dylib"
+      - name: Install libpng on macOS
+        if: runner.os == 'macOS'
+        run: brew install libpng
+      - name: Build PNG16 bridge on macOS
+        if: runner.os == 'macOS'
+        run: python3 scripts/build_native_png.py --prefix "$(brew --prefix libpng)" --output "$RUNNER_TEMP/libPhotoLab.NativePng.dylib"
+      - name: Run PNG16 precision tests on macOS
+        if: runner.os == 'macOS'
+        run: dotnet run --project tests/PhotoLab.Desktop.Tests/PhotoLab.Desktop.Tests.csproj -c Release --no-build -- --png16 "$RUNNER_TEMP/libPhotoLab.NativePng.dylib" "$(brew --prefix little-cms2)/lib/liblcms2.dylib"
+      - name: Run PNG16 export tests on macOS
+        if: runner.os == 'macOS'
+        run: dotnet run --project tests/PhotoLab.Desktop.Tests/PhotoLab.Desktop.Tests.csproj -c Release --no-build -- --png16-export "$RUNNER_TEMP/libPhotoLab.NativePng.dylib"
+      - name: Publish bundled color test host on macOS
+        if: runner.os == 'macOS'
+        run: dotnet publish tests/PhotoLab.Desktop.Tests -c Release --self-contained false -o "$RUNNER_TEMP/photolab-color-tests"
+      - name: Package relocatable color libraries on macOS
+        if: runner.os == 'macOS'
+        run: python3 scripts/package_color_mac.py --png-prefix "$(brew --prefix libpng)" --lcms-prefix "$(brew --prefix little-cms2)" --directory "$RUNNER_TEMP/photolab-color-tests"
+      - name: Relocate bundled color test host on macOS
+        if: runner.os == 'macOS'
+        run: mv "$RUNNER_TEMP/photolab-color-tests" "$RUNNER_TEMP/PhotoLab Color Tests"
+      - name: Run automatic bundled color tests on macOS
+        if: runner.os == 'macOS'
+        run: dotnet "$RUNNER_TEMP/PhotoLab Color Tests/PhotoLab.Desktop.Tests.dll" --bundled-color
+      - name: Run imaging precision tests
+        run: dotnet run --project tests/PhotoLab.Imaging.Tests/PhotoLab.Imaging.Tests.csproj -c Release --no-build
+      - name: Run headless editor input tests
+        run: dotnet run --project tests/PhotoLab.Desktop.Tests/PhotoLab.Desktop.Tests.csproj -c Release --no-build -- --ui

@@ -1,0 +1,8 @@
+  복원할 프로젝트를 확인하는 중...
+  복원할 모든 프로젝트가 최신 상태입니다.
+  PhotoLab.Core -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Core/bin/Release/net10.0/PhotoLab.Core.dll
+  PhotoLab.Imaging -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Imaging/bin/Release/net10.0/PhotoLab.Imaging.dll
+  PhotoLab.Infrastructure -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Infrastructure/bin/Release/net10.0/PhotoLab.Infrastructure.dll
+  PhotoLab.Rendering -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Rendering/bin/Release/net10.0/PhotoLab.Rendering.dll
+  PhotoLab.Desktop -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/bin/Release/net10.0/PhotoLab.dll
+  PhotoLab.Desktop -> /tmp/PhotoLab Color Package/

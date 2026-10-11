@@ -1,0 +1,35 @@
+{
+  "Core": {
+    "exit_code": 0,
+    "passed_checks": 16
+  },
+  "Imaging": {
+    "exit_code": 0,
+    "passed_checks": 34
+  },
+  "Desktop": {
+    "exit_code": 0,
+    "passed_checks": 110
+  },
+  "details": [
+    "BENCHMARK: 600x400 linear float + PNG, 60 requests, 1.073s input, 60 frames during input (55.9/s), accepted request p95 10.47ms; service-only measurement, excludes UI Bitmap decode/presentation.",
+    "CAMERA: cr2.cr2 Canon EOS 40D",
+    "COLOR: cr2.cr2 LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 1918, Channel1 = 1171, Channel2 = 2241, Channel3 = 1171 }, ISO 100, shutter 1.3, f/8",
+    "RAW: cr2.cr2 1944x1296, metadata/preview/full-export 0.81s",
+    "CAMERA: cr3.cr3 Canon EOS R6",
+    "COLOR: cr3.cr3 LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 1853, Channel1 = 1024, Channel2 = 1667, Channel3 = 1024 }, ISO 100, shutter 0.25, f/25",
+    "RAW: cr3.cr3 3407x2271, metadata/preview/full-export 0.71s",
+    "CAMERA: nef.nef Nikon D2H",
+    "COLOR: nef.nef LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 563, Channel1 = 256, Channel2 = 373, Channel3 = 256 }, ISO 200, shutter 0.002, f/8",
+    "RAW: nef.nef 2482x1648, metadata/preview/full-export 0.51s",
+    "CAMERA: arw.arw Sony ILCE-7S",
+    "COLOR: arw.arw LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 2932, Channel1 = 1024, Channel2 = 1372, Channel3 = 1024 }, ISO 400, shutter 0.004, f/",
+    "RAW: arw.arw 2784x1872, metadata/preview/full-export 0.55s",
+    "CAMERA: raf.raf Fujifilm S5000",
+    "COLOR: raf.raf LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 146, Channel1 = 80, Channel2 = 110, Channel3 = 80 }, ISO 200, shutter 0.0014705882352941176, f/6.3",
+    "RAW: raf.raf 2012x1521, metadata/preview/full-export 0.35s",
+    "CAMERA: dng.dng Pentax K-r",
+    "COLOR: dng.dng LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 1.8710938, Channel1 = 1, Channel2 = 1.546875, Channel3 = 0 }, ISO 400, shutter 0.01, f/11",
+    "RAW: dng.dng 4309x2868, metadata/preview/full-export 1.28s"
+  ]
+}

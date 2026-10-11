@@ -1,0 +1,14 @@
+  복원할 프로젝트를 확인하는 중...
+  /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Imaging/PhotoLab.Imaging.csproj을(를) 73밀리초 동안 복원했습니다.
+  /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Infrastructure/PhotoLab.Infrastructure.csproj을(를) 73밀리초 동안 복원했습니다.
+  /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Core/PhotoLab.Core.csproj을(를) 71밀리초 동안 복원했습니다.
+  /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Rendering/PhotoLab.Rendering.csproj을(를) 937밀리초 동안 복원했습니다.
+  /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/PhotoLab.Desktop.csproj을(를) 951밀리초 동안 복원했습니다.
+  PhotoLab.Core -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Core/bin/Release/net10.0/PhotoLab.Core.dll
+  PhotoLab.Imaging -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Imaging/bin/Release/net10.0/PhotoLab.Imaging.dll
+  PhotoLab.Infrastructure -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Infrastructure/bin/Release/net10.0/PhotoLab.Infrastructure.dll
+  PhotoLab.Rendering -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Rendering/bin/Release/net10.0/PhotoLab.Rendering.dll
+/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/EditorWindow.cs(130,9): warning CS0618: 'ToggleButton.Checked'은(는) 사용되지 않습니다. 'Use IsCheckedChanged instead.' [/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/PhotoLab.Desktop.csproj]
+/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/EditorWindow.cs(131,9): warning CS0618: 'ToggleButton.Unchecked'은(는) 사용되지 않습니다. 'Use IsCheckedChanged instead.' [/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/PhotoLab.Desktop.csproj]
+  PhotoLab.Desktop -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/bin/Release/net10.0/osx-arm64/PhotoLab.dll
+  PhotoLab.Desktop -> /tmp/PhotoLab macOS arm64/

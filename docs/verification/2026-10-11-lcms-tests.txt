@@ -1,0 +1,342 @@
+Core
+PASS: Zero settings preserve image bytes
+PASS: Processing does not alias input buffer
+PASS: Positive exposure brightens non-clipped pixels
+PASS: Alpha is preserved
+PASS: Original input is never modified
+PASS: Desaturation creates grayscale pixel
+PASS: Histogram returns channel counts
+PASS: Sidecar JSON round-trip
+PASS: Nikon NEF routes to shared RAW backend
+PASS: Sony/Fuji/DNG extensions route to shared RAW backend
+PASS: JPEG remains on the standard decoder path
+PASS: Other extensions are not advertised
+PASS: PPM 8-bit dimensions
+PASS: PPM 8-bit pixel values, including header-like bytes, are preserved
+PASS: PPM 16-bit big-endian channel values are converted to RGBA8
+PASS: Grayscale PGM fallback is supported
+All core tests passed.
+
+Imaging
+PASS: Adjacent 16-bit samples remain distinct
+PASS: Buffer identifies stride, precision and linear working color space
+PASS: Neutral edits preserve every float sample exactly
+PASS: Exposure retains values above display white and sub-8-bit detail
+PASS: Float processing preserves alpha
+PASS: Exposure recovery survives without intermediate clipping
+PASS: Float processing leaves source untouched
+PASS: All 256 sRGB and alpha values round-trip exactly
+PASS: Float pipeline matches existing basic adjustments at the RGBA8 display boundary
+PASS: Non-finite input samples rejected
+PASS: Invalid alpha rejected
+PASS: Mismatched dimensions rejected
+PASS: Non-finite settings rejected
+PASS: cancellation checked before neutral fast path
+PASS: disposed pooled buffer inaccessible and double disposal safe
+PASS: Separate processed buffer remains valid after other buffers are disposed
+PASS: Linear PPM retains adjacent 16-bit big-endian samples
+PASS: Binary sample bytes resembling header characters preserved
+PASS: truncated PPM rejected
+PASS: low-precision RAW intermediate rejected
+PASS: Preview averages in linear light rather than gamma-encoded values
+PASS: Transparent pixels do not bleed hidden colors into previews
+PASS: Same-size preview preserves all samples including hidden RGB
+PASS: float overflow rejected without returning invalid pixels
+PASS: Exposure precedes contrast about the 0.18 pivot
+PASS: Highlight mask uses luminance after exposure
+PASS: Ten repeated pipeline executions are float-deterministic
+PASS: RAW result ownership transfer survives wrapper disposal
+PASS: RAW ownership can transfer only once
+PASS: disposing RAW result releases owned pixels
+PASS: Camera matrix owns its values and absent fourth WB channel is preserved
+PASS: camera matrix requires three rows and four columns
+PASS: non-finite camera matrix rejected
+PASS: missing primary WB coefficient rejected
+PASS: Camera WB normalization preserves ratios and absent fourth channel at tiny common scales
+PASS: Camera WB normalization includes the fourth physical channel
+PASS: Unrepresentable camera WB ratios rejected before native processing
+PASS: Negative fourth camera WB channel rejected
+PASS: Infinite camera WB input rejected
+PASS: Positive camera warmth increases red and decreases blue before color conversion
+PASS: Camera tint raises red/blue relative to both physical green channels
+PASS: Camera WB control endpoints restore from saved channel ratios
+PASS: As-shot mode restores zero relative WB controls
+PASS: Unrepresentable fourth-channel WB is never silently mapped to relative controls
+PASS: Out-of-range saved WB remains custom instead of silently clamping controls
+PASS: Relative camera WB leaves absent fourth channel absent
+PASS: Out-of-range camera warmth rejected
+PASS: Non-finite camera tint rejected
+PASS: Native RGB16 expands to opaque linear float without an 8-bit or RGBA16 intermediate
+PASS: Native RGB16 dimensions validated
+PASS: native RGB16 expansion honors pre-cancellation
+PASS: 150 direct RGB16 geometries preserve every expanded-reference float and input sample
+PASS: all 65536 RGB16 values preserve expanded-reference float rounding through optimized area preview
+PASS: RGB16 preview rejects zero dimensions
+PASS: RGB16 preview rejects mismatched payload
+PASS: RGB16 preview rejects invalid edge
+PASS: RGB16 preview rejects pre-cancellation before allocation
+All imaging tests passed.
+
+Rendering
+PASS: small interactive preview selects CPU without initializing GPU
+PASS: missing GPU initializes a faithful CPU fallback
+PASS: failed GPU initialization is not repeated for each frame
+PASS: background cleanup failure is observable without discarding the recovered CPU frame
+PASS: CPU fallback returns while failed GPU cleanup is blocked waiting for retirement
+PASS: fallback close retains the failed device until its cleanup can safely complete
+PASS: failed GPU cleanup remains observable and finishes after retirement
+PASS: GPU execution failure releases the device and returns CPU output
+PASS: fallback honors cancellation before processing
+
+Desktop
+PASS: PNG lossless pixel round-trip
+PASS: App loader uses float processing for PNG
+PASS: App preview retains float data and original dimensions
+PASS: Preview resizes while retaining original dimensions
+PASS: JPEG export decodes at full dimensions
+PASS: Editing and export preserve source bytes
+PASS: Direct original overwrite rejected
+PASS: Normalized original path rejected
+PASS: Symlink to source rejected
+PASS: Source through directory symlink rejected
+PASS: Hard-link test fixture created
+PASS: Export replaces hard link without modifying source inode
+PASS: Existing destination replaced without trailing bytes
+PASS: cancelled export rejected
+PASS: Cancelled export preserves existing destination
+PASS: Temporary export files cleaned up
+PASS: Source unchanged after all rejected exports
+PASS: corrupt image rejected
+PASS: Non-cancellable obsolete render discarded
+PASS: Superseded queued render cancelled
+PASS: Latest render returned without overlapping CPU work
+PASS: Image switch invalidates completed preview
+PASS: Rendering resumes after invalidation
+PASS: Closing invalidates preview results
+PASS: App renderer quantizes only after float adjustment
+PASS: Source drain invalidates rendered frame before buffer disposal
+PASS: renderer close retains its owned processor while a frame is in flight
+PASS: renderer close discards the non-cooperative float result
+PASS: renderer releases its processor after the last worker reader finishes
+PASS: Slider drag retains only the final history state
+PASS: One undo restores state before slider drag
+PASS: Redo restores final slider state
+PASS: New edit removes abandoned redo branch
+PASS: History remains bounded and keeps latest edit
+PASS: Grouped undo survives history trimming
+PASS: Opening a photo resets history to its restored settings
+PASS: Versioned store reads existing legacy edit files
+PASS: Versioned edit files round-trip and remain compatible with the Core reader
+PASS: cancelled edit save rejected
+PASS: Cancelled edit save preserves previous JSON
+PASS: Invalid settings rejected before writing
+PASS: Invalid settings preserve previous JSON
+PASS: Unknown edit version rejected
+PASS: Malformed edit JSON rejected
+PASS: Edit file symlink to original rejected
+PASS: Versioned edit saves preserve photograph bytes
+PASS: Legacy tone edit history API retains camera WB
+PASS: Undo restores camera WB and tone state together
+PASS: Inspecting redo does not commit history before RAW development succeeds
+PASS: Out-of-range history inspection never mutates state
+PASS: Redo restores camera-WB reset
+PASS: New camera WB edit removes abandoned redo branch
+PASS: Grouped tone undo keeps restored camera WB and initial state
+PASS: Version 2 restores float camera WB and legacy tone values exactly
+PASS: Tone-only reader refuses WB state instead of discarding it
+PASS: Tone-only writer refuses to overwrite camera WB state
+PASS: Rejected legacy save preserves version 2 bytes
+PASS: Twenty racing modern/legacy saves preserve camera WB across store instances
+PASS: cancelled full-state save rejected
+PASS: Cancelled full-state save preserves camera WB file
+PASS: Invalid WB state rejected before file replacement
+PASS: Invalid WB save preserves previous state
+PASS: Camera WB cannot be saved for standard image inputs
+PASS: Malformed/ambiguous WB schema rejected: {"version":2}
+PASS: Malformed/ambiguous WB schema rejected: {"version":2,"CameraWhiteBalance":null}
+PASS: Malformed/ambiguous WB schema rejected: {"version":2,"CameraWhiteBalance":{"Channel0":2,"Channel1":1,"Channel2":1}}
+PASS: Malformed/ambiguous WB schema rejected: {"version":2,"CameraWhiteBalance":{"Channel0":0,"Channel1":1,"Channel2":1,"Channel3":0}}
+PASS: Malformed/ambiguous WB schema rejected: {"version":2,"CameraWhiteBalance":{"Channel0":2,"Channel1":1,"Channel2":1,"Channel3":0,"channel3":1}}
+PASS: Malformed/ambiguous WB schema rejected: {"version":2,"Version":1}
+PASS: Malformed/ambiguous WB schema rejected: {"version":1,"CameraWhiteBalance":{"Channel0":2,"Channel1":1,"Channel2":1,"Channel3":0}}
+PASS: Unambiguous case-insensitive WB schema remains readable
+PASS: Explicit WB reset writes compatible version 1 for legacy readers
+PASS: Full-state storage preserves source bytes
+PASS: App full-resolution loader uses injected decoder without precision loss
+PASS: App preview passes decoder metadata without extension-based camera inference
+PASS: loader releases full decoded surface after creating preview
+PASS: Existing three-value preview API remains compatible
+PASS: Injected RAW decoder also serves the legacy RGBA8 API
+PASS: Injected decoder failure reaches caller
+PASS: non-cooperative RAW completion rejected after cancellation
+PASS: cancelled late RAW result releases pixels
+PASS: Full loader forwards camera WB to developer without post-sRGB gains
+PASS: Preview loader preserves explicit WB metadata and developed pixels
+PASS: developed full surface released after preview creation
+PASS: decoder without development capability rejects explicit WB
+PASS: camera WB cannot be applied to standard image inputs
+PASS: invalid WB rejected before source or native access
+PASS: explicit development honors pre-cancellation
+PASS: late non-cooperative development rejected after cancellation
+PASS: late development surface disposed on cancellation
+PASS: Camera identity uses normalized native fields and handles CRLF
+PASS: Capture fields after camera identity include fractional shutter, ISO and aperture
+PASS: Native capture decimal parsing is independent of UI culture
+PASS: Non-finite, zero and invalid capture fields remain unavailable
+PASS: Negative and infinite capture fields remain unavailable
+PASS: Multiline filename cannot inject capture values
+PASS: Color metadata lookup does not load unrelated global libraries
+PASS: native metadata read honors pre-cancellation before loading
+PASS: Multiline filename cannot inject camera metadata into helper output
+PASS: Unknown metadata output does not invent camera identity
+PASS: Unavailable metadata helper reports a warning without rejecting the decoded image
+PASS: Slow metadata helper is terminated and reported as unavailable
+All desktop tests passed.
+
+ColorProfile
+PASS: fixture PNG contains a non-sRGB source color profile
+PASS: P3 red maps to unclipped linear sRGB (1.22483, -0.0420455, -0.0196277)
+PASS: ICC conversion preserves neutral gray and straight alpha
+PASS: app float loader applies embedded source-profile conversion before edits
+PASS: export declares sRGB color encoding: .png
+PASS: tagged export decodes into working linear sRGB: .png
+PASS: export declares sRGB color encoding: .jpg
+PASS: tagged export decodes into working linear sRGB: .jpg
+PASS: untagged RGB uses the existing sRGB assumption
+
+LittleCMS
+PASS: JPEG ICC segments reassemble in sequence order
+PASS: missing JPEG ICC segment rejected
+PASS: duplicate JPEG ICC segment rejected
+PASS: inconsistent JPEG ICC segment counts rejected
+PASS: actual JPEG supplies original ICC bytes
+PASS: actual tagged JPEG native load agrees with independent Skia conversion
+PASS: compressed ICC expansion beyond 16 MiB rejected
+PASS: LCMS sRGB transfer agrees with analytic reference
+PASS: LCMS preserves straight alpha including transparent pixels
+PASS: LCMS P3 red retains extended linear RGB (1.22492, -0.0420616, -0.0196398)
+PASS: reused transform is deterministic
+PASS: native profile owns bytes after caller changes its array
+PASS: LCMS block boundary processes the final pixel
+PASS: pre-canceled transform is rejected
+PASS: nonfinite RGB rejected
+PASS: invalid alpha rejected
+PASS: invalid dimensions rejected
+PASS: invalid ICC signature rejected
+PASS: invalid ICC declared length rejected
+PASS: non-RGB profile rejected
+PASS: native parser rejects incomplete ICC tags
+PASS: disposed native transform rejects reuse
+PASS: input and owned output survive native disposal
+PASS: fixture PNG contains a non-sRGB source color profile
+PASS: P3 red maps to unclipped linear sRGB (1.22492, -0.0420616, -0.0196398)
+PASS: ICC conversion preserves neutral gray and straight alpha
+PASS: app float loader applies embedded source-profile conversion before edits
+PASS: export declares sRGB color encoding: .png
+PASS: tagged export decodes into working linear sRGB: .png
+PASS: export declares sRGB color encoding: .jpg
+PASS: tagged export decodes into working linear sRGB: .jpg
+PASS: untagged RGB uses the existing sRGB assumption
+
+UI
+PASS: direct preview declares RGBA order, straight alpha and odd row width
+PASS: direct preview owns a copy after source mutation/unpin/collection and preserves visible RGB/alpha
+PASS: direct opaque preview matches the former PNG bitmap's sRGB pixels
+PASS: UI camera metadata enables as-shot controls
+PASS: UI invalid text never develops RAW or adds history
+PASS: UI mouse Apply develops WB and presents changed pixels
+PASS: UI applied WB restores controls and creates undo step
+PASS: UI unchanged Apply does not redevelop or create history
+PASS: UI Original shows camera-default pixels after custom WB
+PASS: UI mouse Save writes the applied full WB state
+PASS: UI reopening restores saved controls and resets history
+PASS: UI As shot resets WB and preserves an undo step
+PASS: UI mouse Undo restores WB pixels and controls
+PASS: UI mouse Redo returns to as-shot pixels
+PASS: UI failed development keeps prior image and history
+PASS: UI undo after failed development still targets the last successful state
+PASS: UI headless Skia produces a complete editor frame
+PASS: UI standard photos hide RAW controls
+PASS: UI missing metadata disables new WB but permits resetting saved WB
+PASS: UI closing during non-cooperative development releases late pixels
+PASS: UI interactive WB stays visible while full quality is blocked
+PASS: UI new WB input presents a new fast frame during old quality development
+PASS: UI obsolete full-quality pixels are released without replacing latest WB
+PASS: UI idle quality upgrade preserves latest WB controls
+PASS: UI quality upgrade adds no undo entry
+PASS: UI failed replacement preserves accepted fast WB pixels
+PASS: UI failed replacement still releases the cancelled previous quality result
+PASS: UI failed WB replacement resumes accepted quality and preserves saved WB
+PASS: UI closing during full-quality upgrade releases late owned pixels
+PASS: UI WB slider remains enabled while its first preview is pending
+PASS: UI many drag samples retain only one pending native request
+PASS: UI WB frame updates before pointer release without moving the current thumb back
+PASS: UI next native preview uses the newest drag value
+PASS: UI idle WB pump preserves exact thumb inputs while the pointer is held
+PASS: UI same-photo WB refresh retains its accepted frame until the new frame is ready
+PASS: UI coalesced WB drag skips obsolete intermediate values
+PASS: UI one Undo restores the complete pre-drag WB state
+PASS: UI Redo restores the final coalesced WB drag value (65.0000038, expected 65)
+PASS: UI unrepresentable saved WB disables stale thumbs while allowing explicit reset
+PASS: UI unrepresentable saved WB is preserved by the slider UI
+PASS: UI photo switch discards the pending drag value and releases late old-photo pixels
+PASS: UI closing during a WB drag releases late native-preview pixels
+PASS: editor displays multiple changed Skia image frames before pointer release
+PASS: idle editor quality presents the final pointer value
+PASS: editor saves the final drag state
+PASS: one Undo returns the complete tone drag to its initial state
+PASS: Redo restores the final tone value and rendered pixels
+EDITOR_FRAMES: 1800x1200 source / 600x400 interaction, 60 mouse moves / 60 changed inputs over 1.283s, 60 observed image frames (46.7/s), 60 distinct gray values, observation p95 23.53ms; held mouse + Image + captured Skia frame, 16ms polling/capture overhead included, native OS presentation excluded.
+All headless editor input tests passed.
+
+LittleCMSUI
+PASS: direct preview declares RGBA order, straight alpha and odd row width
+PASS: direct preview owns a copy after source mutation/unpin/collection and preserves visible RGB/alpha
+PASS: direct opaque preview matches the former PNG bitmap's sRGB pixels
+PASS: UI camera metadata enables as-shot controls
+PASS: UI invalid text never develops RAW or adds history
+PASS: UI mouse Apply develops WB and presents changed pixels
+PASS: UI applied WB restores controls and creates undo step
+PASS: UI unchanged Apply does not redevelop or create history
+PASS: UI Original shows camera-default pixels after custom WB
+PASS: UI mouse Save writes the applied full WB state
+PASS: UI reopening restores saved controls and resets history
+PASS: UI As shot resets WB and preserves an undo step
+PASS: UI mouse Undo restores WB pixels and controls
+PASS: UI mouse Redo returns to as-shot pixels
+PASS: UI failed development keeps prior image and history
+PASS: UI undo after failed development still targets the last successful state
+PASS: UI headless Skia produces a complete editor frame
+PASS: UI standard photos hide RAW controls
+PASS: UI missing metadata disables new WB but permits resetting saved WB
+PASS: UI closing during non-cooperative development releases late pixels
+PASS: UI interactive WB stays visible while full quality is blocked
+PASS: UI new WB input presents a new fast frame during old quality development
+PASS: UI obsolete full-quality pixels are released without replacing latest WB
+PASS: UI idle quality upgrade preserves latest WB controls
+PASS: UI quality upgrade adds no undo entry
+PASS: UI failed replacement preserves accepted fast WB pixels
+PASS: UI failed replacement still releases the cancelled previous quality result
+PASS: UI failed WB replacement resumes accepted quality and preserves saved WB
+PASS: UI closing during full-quality upgrade releases late owned pixels
+PASS: UI WB slider remains enabled while its first preview is pending
+PASS: UI many drag samples retain only one pending native request
+PASS: UI WB frame updates before pointer release without moving the current thumb back
+PASS: UI next native preview uses the newest drag value
+PASS: UI idle WB pump preserves exact thumb inputs while the pointer is held
+PASS: UI same-photo WB refresh retains its accepted frame until the new frame is ready
+PASS: UI coalesced WB drag skips obsolete intermediate values
+PASS: UI one Undo restores the complete pre-drag WB state
+PASS: UI Redo restores the final coalesced WB drag value (65.0000038, expected 65)
+PASS: UI unrepresentable saved WB disables stale thumbs while allowing explicit reset
+PASS: UI unrepresentable saved WB is preserved by the slider UI
+PASS: UI photo switch discards the pending drag value and releases late old-photo pixels
+PASS: UI closing during a WB drag releases late native-preview pixels
+PASS: editor displays multiple changed Skia image frames before pointer release
+PASS: idle editor quality presents the final pointer value
+PASS: editor saves the final drag state
+PASS: one Undo returns the complete tone drag to its initial state
+PASS: Redo restores the final tone value and rendered pixels
+EDITOR_FRAMES: 1800x1200 source / 600x400 interaction, 60 mouse moves / 60 changed inputs over 1.287s, 60 observed image frames (46.6/s), 60 distinct gray values, observation p95 24.15ms; held mouse + Image + captured Skia frame, 16ms polling/capture overhead included, native OS presentation excluded.
+All headless editor input tests passed.
+

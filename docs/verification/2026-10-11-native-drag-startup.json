@@ -1,0 +1,8 @@
+{
+  "aliveAfterFiveSeconds": true,
+  "stdout": "",
+  "stderr": "",
+  "coreHashesMatch": true,
+  "fixtureHashesMatch": true,
+  "scope": "startup only; not UI interaction"
+}

@@ -1,0 +1,15 @@
+== OMP_NUM_THREADS=1 ==
+PASS: serialized preview timing snapshot matches successful development: dng.dng
+NATIVE_PREVIEW_STAGES: dng.dng, 10 warm same-WB requests, median SDK 39.974ms, conversion/area 8.751ms, awaited total 48.732ms, process-wide managed allocation 45184 bytes; SDK includes native image creation, conversion includes validation/planning, total includes task/gate/release overhead; excludes metadata/open/unpack, UI and native allocation footprint.
+
+== OMP_NUM_THREADS=2 ==
+PASS: serialized preview timing snapshot matches successful development: dng.dng
+NATIVE_PREVIEW_STAGES: dng.dng, 10 warm same-WB requests, median SDK 31.057ms, conversion/area 8.842ms, awaited total 39.899ms, process-wide managed allocation 45184 bytes; SDK includes native image creation, conversion includes validation/planning, total includes task/gate/release overhead; excludes metadata/open/unpack, UI and native allocation footprint.
+
+== OMP_NUM_THREADS=4 ==
+PASS: serialized preview timing snapshot matches successful development: dng.dng
+NATIVE_PREVIEW_STAGES: dng.dng, 10 warm same-WB requests, median SDK 26.761ms, conversion/area 8.835ms, awaited total 35.630ms, process-wide managed allocation 45184 bytes; SDK includes native image creation, conversion includes validation/planning, total includes task/gate/release overhead; excludes metadata/open/unpack, UI and native allocation footprint.
+
+== OMP_NUM_THREADS=8 ==
+PASS: serialized preview timing snapshot matches successful development: dng.dng
+NATIVE_PREVIEW_STAGES: dng.dng, 10 warm same-WB requests, median SDK 25.182ms, conversion/area 8.865ms, awaited total 34.176ms, process-wide managed allocation 45184 bytes; SDK includes native image creation, conversion includes validation/planning, total includes task/gate/release overhead; excludes metadata/open/unpack, UI and native allocation footprint.

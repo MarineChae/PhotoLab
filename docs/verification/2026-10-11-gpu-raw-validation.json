@@ -1,0 +1,6 @@
+{
+  "validationLayerConfirmed": true,
+  "repeatedChecks": 46,
+  "errors": 0,
+  "scope": "adaptive/fallback/GPU/resource checks, not native OS presentation"
+}

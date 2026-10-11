@@ -1,0 +1,18 @@
+  PhotoLab.Core -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Core/bin/Release/net10.0/PhotoLab.Core.dll
+  PhotoLab.Imaging -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Imaging/bin/Release/net10.0/PhotoLab.Imaging.dll
+  PhotoLab.Infrastructure -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Infrastructure/bin/Release/net10.0/PhotoLab.Infrastructure.dll
+/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/EditorWindow.cs(99,9): warning CS0618: 'ToggleButton.Checked'은(는) 사용되지 않습니다. 'Use IsCheckedChanged instead.' [/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/PhotoLab.Desktop.csproj]
+/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/EditorWindow.cs(100,9): warning CS0618: 'ToggleButton.Unchecked'은(는) 사용되지 않습니다. 'Use IsCheckedChanged instead.' [/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/PhotoLab.Desktop.csproj]
+  PhotoLab.Desktop -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/bin/Release/net10.0/PhotoLab.dll
+  PhotoLab.Core.Tests -> /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Core.Tests/bin/Release/net10.0/PhotoLab.Core.Tests.dll
+  PhotoLab.Desktop.Tests -> /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Desktop.Tests/bin/Release/net10.0/PhotoLab.Desktop.Tests.dll
+  PhotoLab.Imaging.Tests -> /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Imaging.Tests/bin/Release/net10.0/PhotoLab.Imaging.Tests.dll
+
+빌드했습니다.
+
+/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/EditorWindow.cs(99,9): warning CS0618: 'ToggleButton.Checked'은(는) 사용되지 않습니다. 'Use IsCheckedChanged instead.' [/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/PhotoLab.Desktop.csproj]
+/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/EditorWindow.cs(100,9): warning CS0618: 'ToggleButton.Unchecked'은(는) 사용되지 않습니다. 'Use IsCheckedChanged instead.' [/Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/PhotoLab.Desktop.csproj]
+    경고 2개
+    오류 0개
+
+경과 시간: 00:00:01.83

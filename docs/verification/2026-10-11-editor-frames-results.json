@@ -1,0 +1,39 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.354
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 51,
+    "seconds": 0.338
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 206,
+    "seconds": 14.797
+  },
+  "NativeSession": {
+    "exitCode": 0,
+    "checks": 80,
+    "seconds": 7.591
+  },
+  "CachedLoader": {
+    "exitCode": 0,
+    "checks": 45,
+    "seconds": 7.346
+  },
+  "NativeUI": {
+    "exitCode": 0,
+    "checks": 42,
+    "seconds": 34.177
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 45
+  },
+  "totalChecks": 485,
+  "scope": "macOS ARM64; UI inputs use Avalonia.Headless/Skia, not native OS presentation",
+  "editorFrameObservation": "EDITOR_FRAMES: 1800x1200 source / 600x400 interaction, 60 mouse moves / 60 changed inputs over 1.285s, 60 observed image frames (46.7/s), 60 distinct gray values, observation p95 24.04ms; held mouse + Image + captured Skia frame, 16ms polling/capture overhead included, native OS presentation excluded."
+}

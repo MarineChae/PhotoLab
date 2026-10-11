@@ -1,0 +1,16 @@
+{
+  "alive_after_5_seconds": true,
+  "stdout": "",
+  "stderr": "",
+  "scope": "startup only; no GUI input verified",
+  "core_sources_unchanged": 8,
+  "fixture_sha256_verified": {
+    "cr2.cr2": "ba644e7dd2abe74eca260e67f0206ff113bf0f62e710f8130611e964d6be5bf1",
+    "cr3.cr3": "74abb0a113d075ad9887a058082f40dd2a938c4813a08474d82356f11a027778",
+    "nef.nef": "155edb938f884ea7372ce98d4ff5f965c3e413b43b95bc9923da6e92082cf914",
+    "arw.arw": "a35ebb2fbec929daa5beb20d1ce5c15a8aac7b1a7a231455387f3df8a7442e07",
+    "raf.raf": "dabd5e74521a6980156be9fd4b88d0c37b0fe4d0e0e6f5c12db8cffff1b76297",
+    "dng.dng": "adc5c155341543e2e5c6de9c0ce87c86cc4629fe90a0f6e68fdf685dcd531b64",
+    "samsung-mislabeled.dng": "6492b7e0ac8e012524c0c83606a104cc9bf3b68f30fa60c7b73ffbe4dc584ab1"
+  }
+}

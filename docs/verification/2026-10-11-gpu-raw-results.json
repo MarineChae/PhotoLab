@@ -1,0 +1,63 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.353
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 57,
+    "seconds": 0.359
+  },
+  "Rendering": {
+    "exitCode": 0,
+    "checks": 5,
+    "seconds": 0.591
+  },
+  "RenderingGPU": {
+    "exitCode": 0,
+    "checks": 46,
+    "seconds": 0.878
+  },
+  "RawGPU": {
+    "exitCode": 0,
+    "checks": 24,
+    "seconds": 4.697
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 209,
+    "seconds": 14.211
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 47,
+    "seconds": 5.562
+  },
+  "UIVulkan": {
+    "exitCode": 0,
+    "checks": 48,
+    "seconds": 5.575
+  },
+  "NativeSession": {
+    "exitCode": 0,
+    "checks": 80,
+    "seconds": 7.354
+  },
+  "CachedLoader": {
+    "exitCode": 0,
+    "checks": 45,
+    "seconds": 7.34
+  },
+  "NativeUIAdaptive": {
+    "exitCode": 0,
+    "checks": 72,
+    "seconds": 60.644
+  },
+  "totalChecks": 649,
+  "scope": "macOS ARM64 Apple M4, CPU/GPU variant repetitions included; UI uses headless Skia, not native OS presentation",
+  "pairedPerformance": [
+    "RAW_GPU_PAIRED: 600x399, 20 alternating same-source combined-control pairs, CPU median/p95 1.593/1.714ms, GPU median/p95 1.866/2.063ms; GPU includes fence/readback/owned float, upload cached, logical capacity 78393600 bytes; RAW decoding/resize/display excluded.",
+    "RAW_GPU_PAIRED: 1800x1198, 20 alternating same-source combined-control pairs, CPU median/p95 15.609/16.821ms, GPU median/p95 11.153/11.807ms; GPU includes fence/readback/owned float, upload cached, logical capacity 78393600 bytes; RAW decoding/resize/display excluded."
+  ]
+}

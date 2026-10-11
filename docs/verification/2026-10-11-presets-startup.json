@@ -1,0 +1,6 @@
+{
+  "runningAfter5Seconds": true,
+  "stdout": "",
+  "stderr": "",
+  "scope": "updated macOS ARM64 app startup; native OS interaction unverified"
+}

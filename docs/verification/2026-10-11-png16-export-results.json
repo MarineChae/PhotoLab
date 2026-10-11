@@ -1,0 +1,49 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.366
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 57,
+    "seconds": 0.79
+  },
+  "Rendering": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.814
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 102,
+    "seconds": 3.039
+  },
+  "ColorProfile": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.386
+  },
+  "LittleCMS": {
+    "exitCode": 0,
+    "checks": 32,
+    "seconds": 0.425
+  },
+  "PNG16Input": {
+    "exitCode": 0,
+    "checks": 32,
+    "seconds": 0.455
+  },
+  "PNG16Export": {
+    "exitCode": 0,
+    "checks": 28,
+    "seconds": 25.863
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 49,
+    "seconds": 5.578
+  },
+  "totalChecks": 334,
+  "scope": "macOS ARM64; six actual RAW full-resolution PNG16 exports, native/standard input and headless precision control; native OS file picker and Windows pending"
+}

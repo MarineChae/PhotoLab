@@ -1,0 +1,5 @@
+{
+  "runningAfter5Seconds": true,
+  "stderr": "",
+  "scope": "updated macOS ARM64 startup, not native folder-picker interaction"
+}

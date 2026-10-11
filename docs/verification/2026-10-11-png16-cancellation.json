@@ -1,0 +1,7 @@
+{
+  "nativeCallbackStatus": 3,
+  "pixels": null,
+  "width": 0,
+  "height": 0,
+  "scope": "controlled cancellation in native row loop, not timed GUI input"
+}

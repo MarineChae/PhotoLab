@@ -1,0 +1,15 @@
+== before run 1 ==
+RGB16_PREVIEW_COST: 2154x1434->600, 10 alternating pairs, expand+resize median 15.529ms / 49421480 allocated bytes; direct median 9.870ms / 40 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+RGB16_PREVIEW_COST: 3000x2000->600, 10 alternating pairs, expand+resize median 23.002ms / 96000104 allocated bytes; direct median 10.907ms / 40 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+
+== after run 1 ==
+RGB16_PREVIEW_COST: 2154x1434->600, 10 alternating pairs, expand+resize median 14.840ms / 49466256 allocated bytes; direct median 10.270ms / 44816 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+RGB16_PREVIEW_COST: 3000x2000->600, 10 alternating pairs, expand+resize median 21.347ms / 96048264 allocated bytes; direct median 12.611ms / 48200 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+
+== after run 2 ==
+RGB16_PREVIEW_COST: 2154x1434->600, 10 alternating pairs, expand+resize median 14.440ms / 49466256 allocated bytes; direct median 10.309ms / 44816 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+RGB16_PREVIEW_COST: 3000x2000->600, 10 alternating pairs, expand+resize median 21.723ms / 96048264 allocated bytes; direct median 12.583ms / 48200 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+
+== before run 2 ==
+RGB16_PREVIEW_COST: 2154x1434->600, 10 alternating pairs, expand+resize median 15.519ms / 49421480 allocated bytes; direct median 9.834ms / 40 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+RGB16_PREVIEW_COST: 3000x2000->600, 10 alternating pairs, expand+resize median 22.558ms / 96000104 allocated bytes; direct median 10.499ms / 40 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.

@@ -1,0 +1,20 @@
+{
+  "platform": "macOS ARM64 26.5.2",
+  "device": "Apple M4 IntegratedGpu",
+  "shaderFloat64": false,
+  "gpuChecks": 12,
+  "validationRepeatedChecks": 12,
+  "validationLayerConfirmed": true,
+  "validationErrors": 0,
+  "cpuReference": "explicit linear RGB exposure multiplication; not full FloatImageProcessor controls",
+  "maximumObservedError": 0,
+  "coreHashesMatch": true,
+  "shaderSha256": "5786b87fd37b46233dfe27a9e077d7bdfceafcc007ded9d4dd6fda2dfc306295",
+  "packages": {
+    "Silk.NET.Vulkan": "2.23.0",
+    "MoltenVK": "1.4.2",
+    "glslang": "16.6.0",
+    "VulkanLoaderAndValidation": "1.4.363.0"
+  },
+  "scope": "standalone compute probe; Windows and app integration not tested"
+}

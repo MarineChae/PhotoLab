@@ -1,0 +1,13 @@
+DEVICE: Apple M4; type IntegratedGpu; shaderFloat64 False
+PASS: GPU linear exposure 1 pixels, gain 0.0625, max error 0, total including allocation/upload/fence/readback 6.151ms
+PASS: GPU linear exposure 1 pixels, gain 1, max error 0, total including allocation/upload/fence/readback 0.488ms
+PASS: GPU linear exposure 1 pixels, gain 1.41421, max error 0, total including allocation/upload/fence/readback 0.427ms
+PASS: GPU linear exposure 1 pixels, gain 16, max error 0, total including allocation/upload/fence/readback 0.447ms
+PASS: GPU linear exposure 37 pixels, gain 0.0625, max error 0, total including allocation/upload/fence/readback 0.379ms
+PASS: GPU linear exposure 37 pixels, gain 1, max error 0, total including allocation/upload/fence/readback 0.518ms
+PASS: GPU linear exposure 37 pixels, gain 1.41421, max error 0, total including allocation/upload/fence/readback 0.375ms
+PASS: GPU linear exposure 37 pixels, gain 16, max error 0, total including allocation/upload/fence/readback 0.364ms
+PASS: GPU linear exposure 240000 pixels, gain 0.0625, max error 0, total including allocation/upload/fence/readback 2.483ms
+PASS: GPU linear exposure 240000 pixels, gain 1, max error 0, total including allocation/upload/fence/readback 2.208ms
+PASS: GPU linear exposure 240000 pixels, gain 1.41421, max error 0, total including allocation/upload/fence/readback 2.245ms
+PASS: GPU linear exposure 240000 pixels, gain 16, max error 0, total including allocation/upload/fence/readback 2.351ms

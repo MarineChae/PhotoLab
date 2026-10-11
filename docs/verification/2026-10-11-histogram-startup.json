@@ -1,0 +1,6 @@
+{
+  "runningAfter5Seconds": true,
+  "stdout": "",
+  "stderr": "",
+  "scope": "macOS ARM64 published app startup, not OS interaction/FPS"
+}

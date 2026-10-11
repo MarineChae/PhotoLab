@@ -1,0 +1,23 @@
+{
+  "unchangedCore": {
+    "src/PhotoLab.Core/CpuImageProcessor.cs": "fde2cc79182f8a9607b80053f052d3b5f4407bd13ab90d4818a43ebaa8c79e82",
+    "src/PhotoLab.Core/EditSettings.cs": "00c826747c3ff4ee8e8d8179717e0a4730fdda297b14d1939f9caeee66d5c170",
+    "src/PhotoLab.Core/Histogram.cs": "e04a9a1889b7ce5af03b37f39df16f40d5b16ae5aed443c9385546113ebb3cbc",
+    "src/PhotoLab.Core/IImageProcessor.cs": "dd0c05088c3edf4275726a1b986f31603e25cb5f877f2c9cf8ba7de6a4195fb2",
+    "src/PhotoLab.Core/PhotoFormats.cs": "f73cf689660e12d9a118a72c2a1d2f1f7d72b20f6c4c0bf3c106fec2daefba2e",
+    "src/PhotoLab.Core/PixelBuffer.cs": "1467cefd6e92f5cf60fb764a7bd576939f8ac8ed5cfaf02d83f0837a1ce8d508",
+    "src/PhotoLab.Core/PpmImageCodec.cs": "de077441b84280ecf6a804cbdb16f311e8f8c4a6aea34c4391335380a73b6353",
+    "src/PhotoLab.Core/SidecarStore.cs": "46928b05a037852844603935189395118bbf10b37269436c12b2ef582d57e3d0"
+  },
+  "nativeBridge": "f3f71986cf55ff017c2047cf0dcdc9c64f64a09cfb9df2f68df0c7b4d679cc50",
+  "code": {
+    "native/PhotoLab.NativePng/decode.c": "64ac845516550b5dfa51ccdfd95c8257ce5e654b0a7574c9709c80702c10917b",
+    "scripts/build_native_png.py": "4f0eec6c010821fe149c8345985bf85d3b2200b48cbb83c7631e2f19341902c3",
+    "src/PhotoLab.Infrastructure/Png16Decoder.cs": "c6625e73e13cd39c3f44ce69a2cfc32d761b040c07e084188a73968123dc1dc5",
+    "src/PhotoLab.Imaging/ImageConvert.cs": "16f8faeb836336eb5c0c2da2309eeb16f40c5c9c172d48c0865b476a41d883c5",
+    "src/PhotoLab.Desktop/SkiaImageCodec.cs": "4700bc3556ef999d53847c890da84bf0702319bfe48cfb40b04e30f5ee6c7553",
+    "tests/PhotoLab.Desktop.Tests/Png16Tests.cs": "2aee650b3b2fff317065a6745363991e3ea03a4b2aa398b6ffc25d947aba02df",
+    "tests/PhotoLab.Desktop.Tests/Program.cs": "eeec9aee3ebafc6e90087c62e49d3f2a3faced3a4afb40eb01a92b697bcb9de0",
+    ".github/workflows/build.yml": "0f97e23208ed2dedd032d6a5afdf0566d980b94f916585aaf872399fe7e29b58"
+  }
+}

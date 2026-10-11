@@ -1,0 +1,21 @@
+{
+  "unchangedCore": {
+    "src/PhotoLab.Core/CpuImageProcessor.cs": "fde2cc79182f8a9607b80053f052d3b5f4407bd13ab90d4818a43ebaa8c79e82",
+    "src/PhotoLab.Core/EditSettings.cs": "00c826747c3ff4ee8e8d8179717e0a4730fdda297b14d1939f9caeee66d5c170",
+    "src/PhotoLab.Core/Histogram.cs": "e04a9a1889b7ce5af03b37f39df16f40d5b16ae5aed443c9385546113ebb3cbc",
+    "src/PhotoLab.Core/IImageProcessor.cs": "dd0c05088c3edf4275726a1b986f31603e25cb5f877f2c9cf8ba7de6a4195fb2",
+    "src/PhotoLab.Core/PhotoFormats.cs": "f73cf689660e12d9a118a72c2a1d2f1f7d72b20f6c4c0bf3c106fec2daefba2e",
+    "src/PhotoLab.Core/PixelBuffer.cs": "1467cefd6e92f5cf60fb764a7bd576939f8ac8ed5cfaf02d83f0837a1ce8d508",
+    "src/PhotoLab.Core/PpmImageCodec.cs": "de077441b84280ecf6a804cbdb16f311e8f8c4a6aea34c4391335380a73b6353",
+    "src/PhotoLab.Core/SidecarStore.cs": "46928b05a037852844603935189395118bbf10b37269436c12b2ef582d57e3d0"
+  },
+  "code": {
+    "src/PhotoLab.Infrastructure/ColorLibraries.cs": "a07f4e1bbb0807e7fef2d2a9c328e04765bb4734bc2344f4af19c2447b3fe302",
+    "src/PhotoLab.Desktop/SkiaImageCodec.cs": "e02441fa5dcebc4f99b79a00b5d7a067f138d59a182ca129c3f4aa6f6a495792",
+    "scripts/package_color_mac.py": "e50fd5c5749014da32a4a56e1ff63244238da47e0adec1b600d424357fb9173f",
+    "tests/PhotoLab.Desktop.Tests/Png16Tests.cs": "cf5d56cdc5108317ecd4dca3f8d57374f8ea66620c68e5d7603960e67bed8429",
+    "tests/PhotoLab.Desktop.Tests/LittleCmsTests.cs": "23f04f0cb21e67d8f782ee845b75123edd304e3ed52165f3644d0617ca618dcd",
+    "tests/PhotoLab.Desktop.Tests/Program.cs": "26c5e0f0e9abc0c3775c3353559cc8a48ef824d8b460c34b760f548cc7109ac9",
+    ".github/workflows/build.yml": "652c4385f29c4cc8927e6f053afc58b6a1c3ffab6d3d8043bd156b4dc4375fee"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.347
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 66,
+    "seconds": 0.81
+  },
+  "Rendering": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.819
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 104,
+    "seconds": 4.076
+  },
+  "ColorProfile": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.394
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 52,
+    "seconds": 5.701
+  },
+  "VulkanUI": {
+    "exitCode": 0,
+    "checks": 53,
+    "seconds": 5.655
+  },
+  "totalChecks": 309,
+  "scope": "macOS ARM64 histogram CPU algorithm, versioned preview publication, CPU/Vulkan headless UI and service benchmark; Windows/OS presentation/full-resolution histogram pending"
+}

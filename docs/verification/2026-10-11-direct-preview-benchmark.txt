@@ -1,0 +1,4 @@
+DISPLAY_COST: 600x400, 20 alternating pairs, PNG encode/decode median 4.527ms p95 4.783ms; direct bitmap median 0.425ms p95 0.461ms (synthetic RGBA8; excludes float processing and OS presentation)
+DISPLAY_INPUT: 600x400, 60 requests over 1.019s, 60 accepted bitmap updates during input (58.9/s), accepted request p95 5.79ms (headless UI thread plus float/RGBA8/upload; excludes OS presentation)
+DISPLAY_COST: 1800x1200, 20 alternating pairs, PNG encode/decode median 45.650ms p95 46.288ms; direct bitmap median 3.868ms p95 4.178ms (synthetic RGBA8; excludes float processing and OS presentation)
+DISPLAY_INPUT: 1800x1200, 60 requests over 1.022s, 0 accepted bitmap updates during input (0.0/s), accepted request p95 38.33ms (headless UI thread plus float/RGBA8/upload; excludes OS presentation)

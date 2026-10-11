@@ -1,0 +1,15 @@
+== before run 1 ==
+RGB16_PREVIEW_COST: 2154x1434->600, 10 alternating pairs, expand+resize median 14.343ms / 49421480 allocated bytes; direct median 9.176ms / 40 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+RGB16_PREVIEW_COST: 3000x2000->600, 10 alternating pairs, expand+resize median 21.726ms / 96000104 allocated bytes; direct median 10.241ms / 40 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+
+== after run 1 ==
+RGB16_PREVIEW_COST: 2154x1434->600, 10 alternating pairs, expand+resize median 13.571ms / 49466256 allocated bytes; direct median 8.276ms / 44816 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+RGB16_PREVIEW_COST: 3000x2000->600, 10 alternating pairs, expand+resize median 21.027ms / 96048264 allocated bytes; direct median 9.760ms / 48200 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+
+== after run 2 ==
+RGB16_PREVIEW_COST: 2154x1434->600, 10 alternating pairs, expand+resize median 14.375ms / 49466256 allocated bytes; direct median 8.588ms / 44816 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+RGB16_PREVIEW_COST: 3000x2000->600, 10 alternating pairs, expand+resize median 21.537ms / 96048264 allocated bytes; direct median 9.776ms / 48200 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+
+== before run 2 ==
+RGB16_PREVIEW_COST: 2154x1434->600, 10 alternating pairs, expand+resize median 15.257ms / 49421480 allocated bytes; direct median 9.824ms / 40 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+RGB16_PREVIEW_COST: 3000x2000->600, 10 alternating pairs, expand+resize median 22.257ms / 96000104 allocated bytes; direct median 10.848ms / 40 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.

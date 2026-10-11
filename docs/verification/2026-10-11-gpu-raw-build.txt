@@ -1,0 +1,15 @@
+  PhotoLab.Core -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Core/bin/Release/net10.0/PhotoLab.Core.dll
+  PhotoLab.Imaging -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Imaging/bin/Release/net10.0/PhotoLab.Imaging.dll
+  PhotoLab.Rendering -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Rendering/bin/Release/net10.0/PhotoLab.Rendering.dll
+  PhotoLab.Infrastructure -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Infrastructure/bin/Release/net10.0/PhotoLab.Infrastructure.dll
+  PhotoLab.Desktop -> /Users/haebyeong/Desktop/PhotoLab-MVP/src/PhotoLab.Desktop/bin/Release/net10.0/PhotoLab.dll
+  PhotoLab.Core.Tests -> /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Core.Tests/bin/Release/net10.0/PhotoLab.Core.Tests.dll
+  PhotoLab.Desktop.Tests -> /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Desktop.Tests/bin/Release/net10.0/PhotoLab.Desktop.Tests.dll
+  PhotoLab.Imaging.Tests -> /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Imaging.Tests/bin/Release/net10.0/PhotoLab.Imaging.Tests.dll
+  PhotoLab.Rendering.Tests -> /Users/haebyeong/Desktop/PhotoLab-MVP/tests/PhotoLab.Rendering.Tests/bin/Release/net10.0/PhotoLab.Rendering.Tests.dll
+
+빌드했습니다.
+    경고 0개
+    오류 0개
+
+경과 시간: 00:00:01.89

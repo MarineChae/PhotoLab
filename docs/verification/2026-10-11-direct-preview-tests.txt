@@ -1,0 +1,543 @@
+== Core ==
+PASS: Zero settings preserve image bytes
+PASS: Processing does not alias input buffer
+PASS: Positive exposure brightens non-clipped pixels
+PASS: Alpha is preserved
+PASS: Original input is never modified
+PASS: Desaturation creates grayscale pixel
+PASS: Histogram returns channel counts
+PASS: Sidecar JSON round-trip
+PASS: Nikon NEF routes to shared RAW backend
+PASS: Sony/Fuji/DNG extensions route to shared RAW backend
+PASS: JPEG remains on the standard decoder path
+PASS: Other extensions are not advertised
+PASS: PPM 8-bit dimensions
+PASS: PPM 8-bit pixel values, including header-like bytes, are preserved
+PASS: PPM 16-bit big-endian channel values are converted to RGBA8
+PASS: Grayscale PGM fallback is supported
+All core tests passed.
+
+== Imaging ==
+PASS: Adjacent 16-bit samples remain distinct
+PASS: Buffer identifies stride, precision and linear working color space
+PASS: Neutral edits preserve every float sample exactly
+PASS: Exposure retains values above display white and sub-8-bit detail
+PASS: Float processing preserves alpha
+PASS: Exposure recovery survives without intermediate clipping
+PASS: Float processing leaves source untouched
+PASS: All 256 sRGB and alpha values round-trip exactly
+PASS: Float pipeline matches existing basic adjustments at the RGBA8 display boundary
+PASS: Non-finite input samples rejected
+PASS: Invalid alpha rejected
+PASS: Mismatched dimensions rejected
+PASS: Non-finite settings rejected
+PASS: cancellation checked before neutral fast path
+PASS: disposed pooled buffer inaccessible and double disposal safe
+PASS: Separate processed buffer remains valid after other buffers are disposed
+PASS: Linear PPM retains adjacent 16-bit big-endian samples
+PASS: Binary sample bytes resembling header characters preserved
+PASS: truncated PPM rejected
+PASS: low-precision RAW intermediate rejected
+PASS: Preview averages in linear light rather than gamma-encoded values
+PASS: Transparent pixels do not bleed hidden colors into previews
+PASS: Same-size preview preserves all samples including hidden RGB
+PASS: float overflow rejected without returning invalid pixels
+PASS: Exposure precedes contrast about the 0.18 pivot
+PASS: Highlight mask uses luminance after exposure
+PASS: Ten repeated pipeline executions are float-deterministic
+PASS: RAW result ownership transfer survives wrapper disposal
+PASS: RAW ownership can transfer only once
+PASS: disposing RAW result releases owned pixels
+PASS: Camera matrix owns its values and absent fourth WB channel is preserved
+PASS: camera matrix requires three rows and four columns
+PASS: non-finite camera matrix rejected
+PASS: missing primary WB coefficient rejected
+PASS: Camera WB normalization preserves ratios and absent fourth channel at tiny common scales
+PASS: Camera WB normalization includes the fourth physical channel
+PASS: Unrepresentable camera WB ratios rejected before native processing
+PASS: Negative fourth camera WB channel rejected
+PASS: Infinite camera WB input rejected
+PASS: Positive camera warmth increases red and decreases blue before color conversion
+PASS: Camera tint raises red/blue relative to both physical green channels
+PASS: Camera WB control endpoints restore from saved channel ratios
+PASS: As-shot mode restores zero relative WB controls
+PASS: Unrepresentable fourth-channel WB is never silently mapped to relative controls
+PASS: Out-of-range saved WB remains custom instead of silently clamping controls
+PASS: Relative camera WB leaves absent fourth channel absent
+PASS: Out-of-range camera warmth rejected
+PASS: Non-finite camera tint rejected
+PASS: Native RGB16 expands to opaque linear float without an 8-bit or RGBA16 intermediate
+PASS: Native RGB16 dimensions validated
+PASS: native RGB16 expansion honors pre-cancellation
+All imaging tests passed.
+
+== Desktop ==
+PASS: PNG lossless pixel round-trip
+PASS: App loader uses float processing for PNG
+PASS: App preview retains float data and original dimensions
+PASS: Preview resizes while retaining original dimensions
+PASS: JPEG export decodes at full dimensions
+PASS: Editing and export preserve source bytes
+PASS: Direct original overwrite rejected
+PASS: Normalized original path rejected
+PASS: Symlink to source rejected
+PASS: Source through directory symlink rejected
+PASS: Hard-link test fixture created
+PASS: Export replaces hard link without modifying source inode
+PASS: Existing destination replaced without trailing bytes
+PASS: cancelled export rejected
+PASS: Cancelled export preserves existing destination
+PASS: Temporary export files cleaned up
+PASS: Source unchanged after all rejected exports
+PASS: corrupt image rejected
+PASS: Non-cancellable obsolete render discarded
+PASS: Superseded queued render cancelled
+PASS: Latest render returned without overlapping CPU work
+PASS: Image switch invalidates completed preview
+PASS: Rendering resumes after invalidation
+PASS: Closing invalidates preview results
+PASS: App renderer quantizes only after float adjustment
+PASS: Source drain invalidates rendered frame before buffer disposal
+PASS: Slider drag retains only the final history state
+PASS: One undo restores state before slider drag
+PASS: Redo restores final slider state
+PASS: New edit removes abandoned redo branch
+PASS: History remains bounded and keeps latest edit
+PASS: Grouped undo survives history trimming
+PASS: Opening a photo resets history to its restored settings
+PASS: Versioned store reads existing legacy edit files
+PASS: Versioned edit files round-trip and remain compatible with the Core reader
+PASS: cancelled edit save rejected
+PASS: Cancelled edit save preserves previous JSON
+PASS: Invalid settings rejected before writing
+PASS: Invalid settings preserve previous JSON
+PASS: Unknown edit version rejected
+PASS: Malformed edit JSON rejected
+PASS: Edit file symlink to original rejected
+PASS: Versioned edit saves preserve photograph bytes
+PASS: Legacy tone edit history API retains camera WB
+PASS: Undo restores camera WB and tone state together
+PASS: Inspecting redo does not commit history before RAW development succeeds
+PASS: Out-of-range history inspection never mutates state
+PASS: Redo restores camera-WB reset
+PASS: New camera WB edit removes abandoned redo branch
+PASS: Grouped tone undo keeps restored camera WB and initial state
+PASS: Version 2 restores float camera WB and legacy tone values exactly
+PASS: Tone-only reader refuses WB state instead of discarding it
+PASS: Tone-only writer refuses to overwrite camera WB state
+PASS: Rejected legacy save preserves version 2 bytes
+PASS: Twenty racing modern/legacy saves preserve camera WB across store instances
+PASS: cancelled full-state save rejected
+PASS: Cancelled full-state save preserves camera WB file
+PASS: Invalid WB state rejected before file replacement
+PASS: Invalid WB save preserves previous state
+PASS: Camera WB cannot be saved for standard image inputs
+PASS: Malformed/ambiguous WB schema rejected: {"version":2}
+PASS: Malformed/ambiguous WB schema rejected: {"version":2,"CameraWhiteBalance":null}
+PASS: Malformed/ambiguous WB schema rejected: {"version":2,"CameraWhiteBalance":{"Channel0":2,"Channel1":1,"Channel2":1}}
+PASS: Malformed/ambiguous WB schema rejected: {"version":2,"CameraWhiteBalance":{"Channel0":0,"Channel1":1,"Channel2":1,"Channel3":0}}
+PASS: Malformed/ambiguous WB schema rejected: {"version":2,"CameraWhiteBalance":{"Channel0":2,"Channel1":1,"Channel2":1,"Channel3":0,"channel3":1}}
+PASS: Malformed/ambiguous WB schema rejected: {"version":2,"Version":1}
+PASS: Malformed/ambiguous WB schema rejected: {"version":1,"CameraWhiteBalance":{"Channel0":2,"Channel1":1,"Channel2":1,"Channel3":0}}
+PASS: Unambiguous case-insensitive WB schema remains readable
+PASS: Explicit WB reset writes compatible version 1 for legacy readers
+PASS: Full-state storage preserves source bytes
+PASS: App full-resolution loader uses injected decoder without precision loss
+PASS: App preview passes decoder metadata without extension-based camera inference
+PASS: loader releases full decoded surface after creating preview
+PASS: Existing three-value preview API remains compatible
+PASS: Injected RAW decoder also serves the legacy RGBA8 API
+PASS: Injected decoder failure reaches caller
+PASS: non-cooperative RAW completion rejected after cancellation
+PASS: cancelled late RAW result releases pixels
+PASS: Full loader forwards camera WB to developer without post-sRGB gains
+PASS: Preview loader preserves explicit WB metadata and developed pixels
+PASS: developed full surface released after preview creation
+PASS: decoder without development capability rejects explicit WB
+PASS: camera WB cannot be applied to standard image inputs
+PASS: invalid WB rejected before source or native access
+PASS: explicit development honors pre-cancellation
+PASS: late non-cooperative development rejected after cancellation
+PASS: late development surface disposed on cancellation
+PASS: Camera identity uses normalized native fields and handles CRLF
+PASS: Capture fields after camera identity include fractional shutter, ISO and aperture
+PASS: Native capture decimal parsing is independent of UI culture
+PASS: Non-finite, zero and invalid capture fields remain unavailable
+PASS: Negative and infinite capture fields remain unavailable
+PASS: Multiline filename cannot inject capture values
+PASS: Color metadata lookup does not load unrelated global libraries
+PASS: native metadata read honors pre-cancellation before loading
+PASS: Multiline filename cannot inject camera metadata into helper output
+PASS: Unknown metadata output does not invent camera identity
+PASS: Unavailable metadata helper reports a warning without rejecting the decoded image
+PASS: Slow metadata helper is terminated and reported as unavailable
+BENCHMARK: 600x400 linear float + RGBA8, 60 requests, 1.020s input, 60 frames during input (58.8/s), accepted request p95 6.85ms; service-only measurement, excludes UI Bitmap upload/presentation.
+PASS: Real RAW camera identity extracted: cr2.cr2
+CAMERA: cr2.cr2 Canon EOS 40D
+PASS: Real RAW ISO and shutter extracted: cr2.cr2
+PASS: Real RAW native WB and camera matrix extracted: cr2.cr2
+COLOR: cr2.cr2 LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 1918, Channel1 = 1171, Channel2 = 2241, Channel3 = 1171 }, ISO 100, shutter 1.3, f/8
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: cr2.cr2
+PASS: Custom WB changes actual RAW development while retaining precision: cr2.cr2
+PASS: Actual app WB preview matches full development at the same settings: cr2.cr2
+PASS: Independent LibRaw custom-WB reference succeeds: cr2.cr2
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: cr2.cr2
+WB: cr2.cr2, reference max error 0, >256 levels, culture-independent development
+PASS: Actual RAW sidecar restores WB and exposure exactly: cr2.cr2
+PASS: Actual RAW restored WB maps back to relative control values: cr2.cr2
+PASS: Reopened RAW with persisted WB reproduces developed pixels: cr2.cr2
+PASS: Custom WB float processing exports at full source resolution: cr2.cr2
+PASS: Persisted WB development/export preserves copied RAW bytes: cr2.cr2
+PASS: Real RAW retains more than 256 red-channel levels: cr2.cr2
+PASS: Real RAW float preview and JPEG encoding: cr2.cr2
+PASS: Real RAW full-resolution atomic export decodes: cr2.cr2
+PASS: Real RAW source hash preserved: cr2.cr2
+RAW: cr2.cr2 1944x1296, metadata/preview/full-export 1.05s
+PASS: Real RAW camera identity extracted: cr3.cr3
+CAMERA: cr3.cr3 Canon EOS R6
+PASS: Real RAW ISO and shutter extracted: cr3.cr3
+PASS: Real RAW native WB and camera matrix extracted: cr3.cr3
+COLOR: cr3.cr3 LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 1853, Channel1 = 1024, Channel2 = 1667, Channel3 = 1024 }, ISO 100, shutter 0.25, f/25
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: cr3.cr3
+PASS: Custom WB changes actual RAW development while retaining precision: cr3.cr3
+PASS: Actual app WB preview matches full development at the same settings: cr3.cr3
+PASS: Independent LibRaw custom-WB reference succeeds: cr3.cr3
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: cr3.cr3
+WB: cr3.cr3, reference max error 0, >256 levels, culture-independent development
+PASS: Actual RAW sidecar restores WB and exposure exactly: cr3.cr3
+PASS: Actual RAW restored WB maps back to relative control values: cr3.cr3
+PASS: Reopened RAW with persisted WB reproduces developed pixels: cr3.cr3
+PASS: Custom WB float processing exports at full source resolution: cr3.cr3
+PASS: Persisted WB development/export preserves copied RAW bytes: cr3.cr3
+PASS: Real RAW retains more than 256 red-channel levels: cr3.cr3
+PASS: Real RAW float preview and JPEG encoding: cr3.cr3
+PASS: Real RAW full-resolution atomic export decodes: cr3.cr3
+PASS: Real RAW source hash preserved: cr3.cr3
+RAW: cr3.cr3 3407x2271, metadata/preview/full-export 2.01s
+PASS: Real RAW camera identity extracted: nef.nef
+CAMERA: nef.nef Nikon D2H
+PASS: Real RAW ISO and shutter extracted: nef.nef
+PASS: Real RAW native WB and camera matrix extracted: nef.nef
+PASS: Nikon D2H fixture matches archived WB, matrix orientation and aperture
+COLOR: nef.nef LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 563, Channel1 = 256, Channel2 = 373, Channel3 = 256 }, ISO 200, shutter 0.002, f/8
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: nef.nef
+PASS: Custom WB changes actual RAW development while retaining precision: nef.nef
+PASS: Actual app WB preview matches full development at the same settings: nef.nef
+PASS: Independent LibRaw custom-WB reference succeeds: nef.nef
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: nef.nef
+WB: nef.nef, reference max error 0, >256 levels, culture-independent development
+PASS: Actual RAW sidecar restores WB and exposure exactly: nef.nef
+PASS: Actual RAW restored WB maps back to relative control values: nef.nef
+PASS: Reopened RAW with persisted WB reproduces developed pixels: nef.nef
+PASS: Custom WB float processing exports at full source resolution: nef.nef
+PASS: Persisted WB development/export preserves copied RAW bytes: nef.nef
+PASS: Real RAW retains more than 256 red-channel levels: nef.nef
+PASS: Real RAW float preview and JPEG encoding: nef.nef
+PASS: Real RAW full-resolution atomic export decodes: nef.nef
+PASS: Real RAW source hash preserved: nef.nef
+RAW: nef.nef 2482x1648, metadata/preview/full-export 1.59s
+PASS: Real RAW camera identity extracted: arw.arw
+CAMERA: arw.arw Sony ILCE-7S
+PASS: Real RAW ISO and shutter extracted: arw.arw
+PASS: Real RAW native WB and camera matrix extracted: arw.arw
+PASS: Sony fixture unknown f/0 is not displayed as aperture
+COLOR: arw.arw LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 2932, Channel1 = 1024, Channel2 = 1372, Channel3 = 1024 }, ISO 400, shutter 0.004, f/
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: arw.arw
+PASS: Custom WB changes actual RAW development while retaining precision: arw.arw
+PASS: Actual app WB preview matches full development at the same settings: arw.arw
+PASS: Independent LibRaw custom-WB reference succeeds: arw.arw
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: arw.arw
+WB: arw.arw, reference max error 0, >256 levels, culture-independent development
+PASS: Actual RAW sidecar restores WB and exposure exactly: arw.arw
+PASS: Actual RAW restored WB maps back to relative control values: arw.arw
+PASS: Reopened RAW with persisted WB reproduces developed pixels: arw.arw
+PASS: Custom WB float processing exports at full source resolution: arw.arw
+PASS: Persisted WB development/export preserves copied RAW bytes: arw.arw
+PASS: Real RAW retains more than 256 red-channel levels: arw.arw
+PASS: Real RAW float preview and JPEG encoding: arw.arw
+PASS: Real RAW full-resolution atomic export decodes: arw.arw
+PASS: Real RAW source hash preserved: arw.arw
+RAW: arw.arw 2784x1872, metadata/preview/full-export 1.48s
+PASS: Real RAW camera identity extracted: raf.raf
+CAMERA: raf.raf Fujifilm S5000
+PASS: Real RAW ISO and shutter extracted: raf.raf
+PASS: Real RAW native WB and camera matrix extracted: raf.raf
+COLOR: raf.raf LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 146, Channel1 = 80, Channel2 = 110, Channel3 = 80 }, ISO 200, shutter 0.0014705882352941176, f/6.3
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: raf.raf
+PASS: Custom WB changes actual RAW development while retaining precision: raf.raf
+PASS: Actual app WB preview matches full development at the same settings: raf.raf
+PASS: Independent LibRaw custom-WB reference succeeds: raf.raf
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: raf.raf
+WB: raf.raf, reference max error 0, >256 levels, culture-independent development
+PASS: Actual RAW sidecar restores WB and exposure exactly: raf.raf
+PASS: Actual RAW restored WB maps back to relative control values: raf.raf
+PASS: Reopened RAW with persisted WB reproduces developed pixels: raf.raf
+PASS: Custom WB float processing exports at full source resolution: raf.raf
+PASS: Persisted WB development/export preserves copied RAW bytes: raf.raf
+PASS: Real RAW retains more than 256 red-channel levels: raf.raf
+PASS: Real RAW float preview and JPEG encoding: raf.raf
+PASS: Real RAW full-resolution atomic export decodes: raf.raf
+PASS: Real RAW source hash preserved: raf.raf
+RAW: raf.raf 2012x1521, metadata/preview/full-export 0.91s
+PASS: Real RAW camera identity extracted: dng.dng
+CAMERA: dng.dng Pentax K-r
+PASS: Real RAW ISO and shutter extracted: dng.dng
+PASS: Real RAW native WB and camera matrix extracted: dng.dng
+PASS: Pentax DNG absent fourth channel is not treated as alpha
+COLOR: dng.dng LibRaw 0.22.2-Release, WB CameraWhiteBalance { Channel0 = 1.8710938, Channel1 = 1, Channel2 = 1.546875, Channel3 = 0 }, ISO 400, shutter 0.01, f/11
+PASS: Custom WB development preserves dimensions, requested WB and original AsShot: dng.dng
+PASS: Custom WB changes actual RAW development while retaining precision: dng.dng
+PASS: Actual app WB preview matches full development at the same settings: dng.dng
+PASS: Independent LibRaw custom-WB reference succeeds: dng.dng
+PASS: Normalized WB agrees with independent native reference within four 16-bit levels: dng.dng
+WB: dng.dng, reference max error 0, >256 levels, culture-independent development
+PASS: Actual RAW sidecar restores WB and exposure exactly: dng.dng
+PASS: Actual RAW restored WB maps back to relative control values: dng.dng
+PASS: Reopened RAW with persisted WB reproduces developed pixels: dng.dng
+PASS: Custom WB float processing exports at full source resolution: dng.dng
+PASS: Persisted WB development/export preserves copied RAW bytes: dng.dng
+PASS: Real RAW retains more than 256 red-channel levels: dng.dng
+PASS: Real RAW float preview and JPEG encoding: dng.dng
+PASS: Real RAW full-resolution atomic export decodes: dng.dng
+PASS: Real RAW source hash preserved: dng.dng
+RAW: dng.dng 4309x2868, metadata/preview/full-export 3.65s
+PASS: Non-RAW payload with RAW extension is rejected by the decoder
+PASS: Rejected RAW payload remains unchanged
+All desktop tests passed.
+
+== NativeSession ==
+PASS: native session open checks pre-cancellation
+PASS: native session rejects invalid RAW and releases failed-open resources
+PASS: native bridge matches installed LibRaw: cr2.cr2
+PASS: cached RAW dimensions match CLI: cr2.cr2
+PASS: cached native RGB16 agrees with explicit-WB CLI: cr2.cr2
+PASS: cached sensor data supports changed WB: cr2.cr2
+PASS: A/B/A development restores identical pixels without rereading source: cr2.cr2
+PREVIEW: cr2.cr2 native 600x400, reference 600x400, max error 0
+PASS: cached half-size preview matches independent LibRaw -h reference: cr2.cr2
+PASS: full development remains unchanged after half-size preview: cr2.cr2
+PASS: cached session pre-cancellation leaves rawdata intact
+PASS: cached session remains valid after pre-cancellation: cr2.cr2
+PASS: superseded requests preserve cached sensor data: cr2.cr2
+PASS: concurrent disposal joins native work before releasing its module: cr2.cr2
+PASS: native results own pixels beyond session disposal: cr2.cr2
+PASS: disposed cached session rejects new development
+SESSION: cr2.cr2 CLI endpoint 247.4ms, open/unpack 61.6ms, first 19.6ms, repeat 15.8ms, half/600px preview 25.2ms, max error 0
+PASS: native bridge matches installed LibRaw: cr3.cr3
+PASS: cached RAW dimensions match CLI: cr3.cr3
+PASS: cached native RGB16 agrees with explicit-WB CLI: cr3.cr3
+PASS: cached sensor data supports changed WB: cr3.cr3
+PASS: A/B/A development restores identical pixels without rereading source: cr3.cr3
+PREVIEW: cr3.cr3 native 600x400, reference 600x400, max error 0
+PASS: cached half-size preview matches independent LibRaw -h reference: cr3.cr3
+PASS: full development remains unchanged after half-size preview: cr3.cr3
+PASS: cached session pre-cancellation leaves rawdata intact
+PASS: cached session remains valid after pre-cancellation: cr3.cr3
+PASS: superseded requests preserve cached sensor data: cr3.cr3
+PASS: concurrent disposal joins native work before releasing its module: cr3.cr3
+PASS: native results own pixels beyond session disposal: cr3.cr3
+PASS: disposed cached session rejects new development
+SESSION: cr3.cr3 CLI endpoint 202.7ms, open/unpack 23.0ms, first 134.6ms, repeat 132.1ms, half/600px preview 25.2ms, max error 0
+PASS: native bridge matches installed LibRaw: nef.nef
+PASS: cached RAW dimensions match CLI: nef.nef
+PASS: cached native RGB16 agrees with explicit-WB CLI: nef.nef
+PASS: cached sensor data supports changed WB: nef.nef
+PASS: A/B/A development restores identical pixels without rereading source: nef.nef
+PREVIEW: nef.nef native 600x398, reference 600x398, max error 0
+PASS: cached half-size preview matches independent LibRaw -h reference: nef.nef
+PASS: full development remains unchanged after half-size preview: nef.nef
+PASS: cached session pre-cancellation leaves rawdata intact
+PASS: cached session remains valid after pre-cancellation: nef.nef
+PASS: superseded requests preserve cached sensor data: nef.nef
+PASS: concurrent disposal joins native work before releasing its module: nef.nef
+PASS: native results own pixels beyond session disposal: nef.nef
+PASS: disposed cached session rejects new development
+SESSION: nef.nef CLI endpoint 165.3ms, open/unpack 38.3ms, first 89.1ms, repeat 83.2ms, half/600px preview 12.7ms, max error 0
+PASS: native bridge matches installed LibRaw: arw.arw
+PASS: cached RAW dimensions match CLI: arw.arw
+PASS: cached native RGB16 agrees with explicit-WB CLI: arw.arw
+PASS: cached sensor data supports changed WB: arw.arw
+PASS: A/B/A development restores identical pixels without rereading source: arw.arw
+PREVIEW: arw.arw native 600x403, reference 600x403, max error 0
+PASS: cached half-size preview matches independent LibRaw -h reference: arw.arw
+PASS: full development remains unchanged after half-size preview: arw.arw
+PASS: cached session pre-cancellation leaves rawdata intact
+PASS: cached session remains valid after pre-cancellation: arw.arw
+PASS: superseded requests preserve cached sensor data: arw.arw
+PASS: concurrent disposal joins native work before releasing its module: arw.arw
+PASS: native results own pixels beyond session disposal: arw.arw
+PASS: disposed cached session rejects new development
+SESSION: arw.arw CLI endpoint 158.8ms, open/unpack 17.4ms, first 106.9ms, repeat 104.9ms, half/600px preview 18.5ms, max error 0
+PASS: native bridge matches installed LibRaw: raf.raf
+PASS: cached RAW dimensions match CLI: raf.raf
+PASS: cached native RGB16 agrees with explicit-WB CLI: raf.raf
+PASS: cached sensor data supports changed WB: raf.raf
+PASS: A/B/A development restores identical pixels without rereading source: raf.raf
+PREVIEW: raf.raf native 600x453, reference 600x453, max error 0
+PASS: cached half-size preview matches independent LibRaw -h reference: raf.raf
+PASS: full development remains unchanged after half-size preview: raf.raf
+PASS: cached session pre-cancellation leaves rawdata intact
+PASS: cached session remains valid after pre-cancellation: raf.raf
+PASS: superseded requests preserve cached sensor data: raf.raf
+PASS: concurrent disposal joins native work before releasing its module: raf.raf
+PASS: native results own pixels beyond session disposal: raf.raf
+PASS: disposed cached session rejects new development
+SESSION: raf.raf CLI endpoint 110.1ms, open/unpack 5.6ms, first 112.2ms, repeat 44.3ms, half/600px preview 15.5ms, max error 0
+PASS: native bridge matches installed LibRaw: dng.dng
+PASS: cached RAW dimensions match CLI: dng.dng
+PASS: cached native RGB16 agrees with explicit-WB CLI: dng.dng
+PASS: cached sensor data supports changed WB: dng.dng
+PASS: A/B/A development restores identical pixels without rereading source: dng.dng
+PREVIEW: dng.dng native 600x399, reference 600x399, max error 0
+PASS: cached half-size preview matches independent LibRaw -h reference: dng.dng
+PASS: full development remains unchanged after half-size preview: dng.dng
+PASS: cached session pre-cancellation leaves rawdata intact
+PASS: cached session remains valid after pre-cancellation: dng.dng
+PASS: superseded requests preserve cached sensor data: dng.dng
+PASS: concurrent disposal joins native work before releasing its module: dng.dng
+PASS: native results own pixels beyond session disposal: dng.dng
+PASS: disposed cached session rejects new development
+SESSION: dng.dng CLI endpoint 394.3ms, open/unpack 139.4ms, first 204.6ms, repeat 192.3ms, half/600px preview 33.7ms, max error 0
+All native RAW session tests passed.
+
+== CachedLoader ==
+PASS: repeated WB reuses metadata and native session
+PASS: external source edit invalidates and releases the session
+PASS: explicit reopen releases cached native resources
+PASS: cancelled session opening rejects late completion
+PASS: cancelled late session is released before becoming cache owner
+PASS: closing cache rejects non-cooperative late pixels
+PASS: cache disposal joins active work and releases the session once
+PASS: closed cache releases late pixel buffers
+PASS: disposed app cache rejects new loads
+PASS: cached loader preserves original camera metadata: cr2.cr2
+PASS: cached app full/export pixels match CLI development: cr2.cr2
+PASS: cached app quality preview matches full development and WB metadata: cr2.cr2
+PASS: interactive loader preserves full dimensions and matches native half-size reference: cr2.cr2
+PASS: preview/export share one unpack session: cr2.cr2
+PASS: explicit reopen replaces unpack session without changing pixels: cr2.cr2
+PASS: cached loader preserves original camera metadata: cr3.cr3
+PASS: cached app full/export pixels match CLI development: cr3.cr3
+PASS: cached app quality preview matches full development and WB metadata: cr3.cr3
+PASS: interactive loader preserves full dimensions and matches native half-size reference: cr3.cr3
+PASS: preview/export share one unpack session: cr3.cr3
+PASS: explicit reopen replaces unpack session without changing pixels: cr3.cr3
+PASS: cached loader preserves original camera metadata: nef.nef
+PASS: cached app full/export pixels match CLI development: nef.nef
+PASS: cached app quality preview matches full development and WB metadata: nef.nef
+PASS: interactive loader preserves full dimensions and matches native half-size reference: nef.nef
+PASS: preview/export share one unpack session: nef.nef
+PASS: explicit reopen replaces unpack session without changing pixels: nef.nef
+PASS: cached loader preserves original camera metadata: arw.arw
+PASS: cached app full/export pixels match CLI development: arw.arw
+PASS: cached app quality preview matches full development and WB metadata: arw.arw
+PASS: interactive loader preserves full dimensions and matches native half-size reference: arw.arw
+PASS: preview/export share one unpack session: arw.arw
+PASS: explicit reopen replaces unpack session without changing pixels: arw.arw
+PASS: cached loader preserves original camera metadata: raf.raf
+PASS: cached app full/export pixels match CLI development: raf.raf
+PASS: cached app quality preview matches full development and WB metadata: raf.raf
+PASS: interactive loader preserves full dimensions and matches native half-size reference: raf.raf
+PASS: preview/export share one unpack session: raf.raf
+PASS: explicit reopen replaces unpack session without changing pixels: raf.raf
+PASS: cached loader preserves original camera metadata: dng.dng
+PASS: cached app full/export pixels match CLI development: dng.dng
+PASS: cached app quality preview matches full development and WB metadata: dng.dng
+PASS: interactive loader preserves full dimensions and matches native half-size reference: dng.dng
+PASS: preview/export share one unpack session: dng.dng
+PASS: explicit reopen replaces unpack session without changing pixels: dng.dng
+All cached loader tests passed.
+
+== NativeUI ==
+PASS: UI native WB first presents an interactive-size actual RAW frame: cr2.cr2
+PASS: UI native opt-in WB control displays CLI-equivalent actual RAW pixels: cr2.cr2
+PASS: UI native WB refresh preserves the original comparison bitmap: cr2.cr2
+PASS: UI native WB Undo returns to camera-default actual RAW pixels: cr2.cr2
+PASS: UI native RAW pixels update during held mouse drag: cr2.cr2
+HEADLESS_DRAG_FIRST_FRAME: cr2.cr2 110.31ms (includes input/bitmap, polling; excludes native OS presentation)
+PASS: UI native drag release upgrades to CLI-equivalent latest WB: cr2.cr2
+PASS: UI native complete drag uses one Undo: cr2.cr2
+PASS: UI native WB first presents an interactive-size actual RAW frame: cr3.cr3
+PASS: UI native opt-in WB control displays CLI-equivalent actual RAW pixels: cr3.cr3
+PASS: UI native WB refresh preserves the original comparison bitmap: cr3.cr3
+PASS: UI native WB Undo returns to camera-default actual RAW pixels: cr3.cr3
+PASS: UI native RAW pixels update during held mouse drag: cr3.cr3
+HEADLESS_DRAG_FIRST_FRAME: cr3.cr3 88.90ms (includes input/bitmap, polling; excludes native OS presentation)
+PASS: UI native drag release upgrades to CLI-equivalent latest WB: cr3.cr3
+PASS: UI native complete drag uses one Undo: cr3.cr3
+PASS: UI native WB first presents an interactive-size actual RAW frame: nef.nef
+PASS: UI native opt-in WB control displays CLI-equivalent actual RAW pixels: nef.nef
+PASS: UI native WB refresh preserves the original comparison bitmap: nef.nef
+PASS: UI native WB Undo returns to camera-default actual RAW pixels: nef.nef
+PASS: UI native RAW pixels update during held mouse drag: nef.nef
+HEADLESS_DRAG_FIRST_FRAME: nef.nef 88.24ms (includes input/bitmap, polling; excludes native OS presentation)
+PASS: UI native drag release upgrades to CLI-equivalent latest WB: nef.nef
+PASS: UI native complete drag uses one Undo: nef.nef
+PASS: UI native WB first presents an interactive-size actual RAW frame: arw.arw
+PASS: UI native opt-in WB control displays CLI-equivalent actual RAW pixels: arw.arw
+PASS: UI native WB refresh preserves the original comparison bitmap: arw.arw
+PASS: UI native WB Undo returns to camera-default actual RAW pixels: arw.arw
+PASS: UI native RAW pixels update during held mouse drag: arw.arw
+HEADLESS_DRAG_FIRST_FRAME: arw.arw 86.37ms (includes input/bitmap, polling; excludes native OS presentation)
+PASS: UI native drag release upgrades to CLI-equivalent latest WB: arw.arw
+PASS: UI native complete drag uses one Undo: arw.arw
+PASS: UI native WB first presents an interactive-size actual RAW frame: raf.raf
+PASS: UI native opt-in WB control displays CLI-equivalent actual RAW pixels: raf.raf
+PASS: UI native WB refresh preserves the original comparison bitmap: raf.raf
+PASS: UI native WB Undo returns to camera-default actual RAW pixels: raf.raf
+PASS: UI native RAW pixels update during held mouse drag: raf.raf
+HEADLESS_DRAG_FIRST_FRAME: raf.raf 70.02ms (includes input/bitmap, polling; excludes native OS presentation)
+PASS: UI native drag release upgrades to CLI-equivalent latest WB: raf.raf
+PASS: UI native complete drag uses one Undo: raf.raf
+PASS: UI native WB first presents an interactive-size actual RAW frame: dng.dng
+PASS: UI native opt-in WB control displays CLI-equivalent actual RAW pixels: dng.dng
+PASS: UI native WB refresh preserves the original comparison bitmap: dng.dng
+PASS: UI native WB Undo returns to camera-default actual RAW pixels: dng.dng
+PASS: UI native RAW pixels update during held mouse drag: dng.dng
+HEADLESS_DRAG_FIRST_FRAME: dng.dng 84.50ms (includes input/bitmap, polling; excludes native OS presentation)
+PASS: UI native drag release upgrades to CLI-equivalent latest WB: dng.dng
+PASS: UI native complete drag uses one Undo: dng.dng
+All actual-RAW native editor input tests passed.
+
+== UI ==
+PASS: direct preview declares RGBA order, straight alpha and odd row width
+PASS: direct preview owns a copy after source mutation/unpin/collection and preserves visible RGB/alpha
+PASS: direct opaque preview matches the former PNG bitmap's sRGB pixels
+PASS: UI camera metadata enables as-shot controls
+PASS: UI invalid text never develops RAW or adds history
+PASS: UI mouse Apply develops WB and presents changed pixels
+PASS: UI applied WB restores controls and creates undo step
+PASS: UI unchanged Apply does not redevelop or create history
+PASS: UI Original shows camera-default pixels after custom WB
+PASS: UI mouse Save writes the applied full WB state
+PASS: UI reopening restores saved controls and resets history
+PASS: UI As shot resets WB and preserves an undo step
+PASS: UI mouse Undo restores WB pixels and controls
+PASS: UI mouse Redo returns to as-shot pixels
+PASS: UI failed development keeps prior image and history
+PASS: UI undo after failed development still targets the last successful state
+PASS: UI headless Skia produces a complete editor frame
+PASS: UI standard photos hide RAW controls
+PASS: UI missing metadata disables new WB but permits resetting saved WB
+PASS: UI closing during non-cooperative development releases late pixels
+PASS: UI interactive WB stays visible while full quality is blocked
+PASS: UI new WB input presents a new fast frame during old quality development
+PASS: UI obsolete full-quality pixels are released without replacing latest WB
+PASS: UI idle quality upgrade preserves latest WB controls
+PASS: UI quality upgrade adds no undo entry
+PASS: UI failed replacement preserves accepted fast WB pixels
+PASS: UI failed replacement still releases the cancelled previous quality result
+PASS: UI failed WB replacement resumes accepted quality and preserves saved WB
+PASS: UI closing during full-quality upgrade releases late owned pixels
+PASS: UI WB slider remains enabled while its first preview is pending
+PASS: UI many drag samples retain only one pending native request
+PASS: UI WB frame updates before pointer release without moving the current thumb back
+PASS: UI next native preview uses the newest drag value
+PASS: UI coalesced WB drag skips obsolete intermediate values
+PASS: UI one Undo restores the complete pre-drag WB state
+PASS: UI Redo restores the final coalesced WB drag value (65.0000038, expected 65)
+PASS: UI unrepresentable saved WB disables stale thumbs while allowing explicit reset
+PASS: UI unrepresentable saved WB is preserved by the slider UI
+PASS: UI photo switch discards the pending drag value and releases late old-photo pixels
+PASS: UI closing during a WB drag releases late native-preview pixels
+All headless editor input tests passed.

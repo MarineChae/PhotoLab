@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PhotoLab.Core/PhotoLab.Core.csproj" />
+    <Project Path="src/PhotoLab.Desktop/PhotoLab.Desktop.csproj" />
+    <Project Path="src/PhotoLab.Imaging/PhotoLab.Imaging.csproj" />
+    <Project Path="src/PhotoLab.Rendering/PhotoLab.Rendering.csproj" />
+    <Project Path="src/PhotoLab.Infrastructure/PhotoLab.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PhotoLab.Core.Tests/PhotoLab.Core.Tests.csproj" />
+    <Project Path="tests/PhotoLab.Desktop.Tests/PhotoLab.Desktop.Tests.csproj" />
+    <Project Path="tests/PhotoLab.Imaging.Tests/PhotoLab.Imaging.Tests.csproj" />
+    <Project Path="tests/PhotoLab.Rendering.Tests/PhotoLab.Rendering.Tests.csproj" />
+  </Folder>
+</Solution>

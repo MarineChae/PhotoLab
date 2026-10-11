@@ -1,0 +1,49 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.341
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 57,
+    "seconds": 0.791
+  },
+  "Rendering": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.815
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 102,
+    "seconds": 2.608
+  },
+  "ColorProfile": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.377
+  },
+  "LittleCMS": {
+    "exitCode": 0,
+    "checks": 32,
+    "seconds": 0.421
+  },
+  "PNG16": {
+    "exitCode": 0,
+    "checks": 32,
+    "seconds": 0.745
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 47,
+    "seconds": 5.61
+  },
+  "PrecisionUI": {
+    "exitCode": 0,
+    "checks": 47,
+    "seconds": 5.707
+  },
+  "totalChecks": 351,
+  "scope": "macOS ARM64; PNG16 full-code/filter/Adam7/ICC/edit/export suite and related CPU/headless variants; RAW/GPU native unchanged and not rerun; Windows/packaging/16-bit export pending"
+}

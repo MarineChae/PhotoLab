@@ -1,0 +1,45 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.378
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 51,
+    "seconds": 0.348
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 206,
+    "seconds": 14.293
+  },
+  "NativeSession": {
+    "exitCode": 0,
+    "checks": 80,
+    "seconds": 7.391
+  },
+  "CachedLoader": {
+    "exitCode": 0,
+    "checks": 45,
+    "seconds": 7.582
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 47
+  },
+  "NativeUI": {
+    "exitCode": 0,
+    "checks": 72
+  },
+  "totalChecks": 517,
+  "scope": "macOS ARM64; UI inputs use Avalonia.Headless/Skia, not native OS presentation",
+  "rawFrameObservations": [
+    "RAW_EDITOR_FRAMES: cr2.cr2, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.339s, 49 observed photo frames (36.6/s), 34 distinct region hashes, observed inter-frame gap p95 45.46ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded.",
+    "RAW_EDITOR_FRAMES: cr3.cr3, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.273s, 39 observed photo frames (30.6/s), 28 distinct region hashes, observed inter-frame gap p95 44.80ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded.",
+    "RAW_EDITOR_FRAMES: nef.nef, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.513s, 59 observed photo frames (39.0/s), 59 distinct region hashes, observed inter-frame gap p95 27.97ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded.",
+    "RAW_EDITOR_FRAMES: arw.arw, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.451s, 58 observed photo frames (40.0/s), 48 distinct region hashes, observed inter-frame gap p95 31.70ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded.",
+    "RAW_EDITOR_FRAMES: raf.raf, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.600s, 57 observed photo frames (35.6/s), 54 distinct region hashes, observed inter-frame gap p95 46.85ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded.",
+    "RAW_EDITOR_FRAMES: dng.dng, warm unpack cache, 60 mouse moves / 60 changed inputs over 1.236s, 26 observed photo frames (21.0/s), 19 distinct region hashes, observed inter-frame gap p95 63.08ms; 16ms polling/capture included, intermediate WB requests coalesced, native OS presentation excluded."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "Core": {
+    "exit_code": 0,
+    "passed_checks": 16
+  },
+  "Imaging": {
+    "exit_code": 0,
+    "passed_checks": 51
+  },
+  "Desktop": {
+    "exit_code": 0,
+    "passed_checks": 206
+  },
+  "UI": {
+    "exit_code": 0,
+    "passed_checks": 17
+  },
+  "NativeSession": {
+    "exit_code": 0,
+    "passed_checks": 80
+  },
+  "CachedLoader": {
+    "exit_code": 0,
+    "passed_checks": 39
+  },
+  "NativeUI": {
+    "exit_code": 0,
+    "passed_checks": 18
+  },
+  "details": [
+    "BENCHMARK: 600x400 linear float + PNG, 60 requests, 1.083s input, 60 frames during input (55.4/s), accepted request p95 10.49ms; service-only measurement, excludes UI Bitmap decode/presentation.",
+    "WB: cr2.cr2, reference max error 0, >256 levels, culture-independent development",
+    "RAW: cr2.cr2 1944x1296, metadata/preview/full-export 0.97s",
+    "WB: cr3.cr3, reference max error 0, >256 levels, culture-independent development",
+    "RAW: cr3.cr3 3407x2271, metadata/preview/full-export 1.93s",
+    "WB: nef.nef, reference max error 0, >256 levels, culture-independent development",
+    "RAW: nef.nef 2482x1648, metadata/preview/full-export 1.37s",
+    "WB: arw.arw, reference max error 0, >256 levels, culture-independent development",
+    "RAW: arw.arw 2784x1872, metadata/preview/full-export 1.50s",
+    "WB: raf.raf, reference max error 0, >256 levels, culture-independent development",
+    "RAW: raf.raf 2012x1521, metadata/preview/full-export 0.88s",
+    "WB: dng.dng, reference max error 0, >256 levels, culture-independent development",
+    "RAW: dng.dng 4309x2868, metadata/preview/full-export 3.45s",
+    "PREVIEW: cr2.cr2 native 600x400, reference 600x400, max error 0",
+    "SESSION: cr2.cr2 CLI endpoint 251.2ms, open/unpack 61.8ms, first 18.3ms, repeat 15.5ms, half/600px preview 24.3ms, max error 0",
+    "PREVIEW: cr3.cr3 native 600x400, reference 600x400, max error 0",
+    "SESSION: cr3.cr3 CLI endpoint 199.1ms, open/unpack 23.0ms, first 134.7ms, repeat 131.8ms, half/600px preview 24.7ms, max error 0",
+    "PREVIEW: nef.nef native 600x398, reference 600x398, max error 0",
+    "SESSION: nef.nef CLI endpoint 163.2ms, open/unpack 38.1ms, first 84.8ms, repeat 83.7ms, half/600px preview 12.2ms, max error 0",
+    "PREVIEW: arw.arw native 600x403, reference 600x403, max error 0",
+    "SESSION: arw.arw CLI endpoint 165.0ms, open/unpack 18.2ms, first 104.7ms, repeat 99.2ms, half/600px preview 16.5ms, max error 0",
+    "PREVIEW: raf.raf native 600x453, reference 600x453, max error 0",
+    "SESSION: raf.raf CLI endpoint 113.5ms, open/unpack 5.3ms, first 77.5ms, repeat 43.5ms, half/600px preview 15.2ms, max error 0",
+    "PREVIEW: dng.dng native 600x399, reference 600x399, max error 0",
+    "SESSION: dng.dng CLI endpoint 397.2ms, open/unpack 139.5ms, first 199.5ms, repeat 189.6ms, half/600px preview 32.2ms, max error 0"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "Core": {
+    "exitCode": 0,
+    "checks": 16,
+    "seconds": 0.342
+  },
+  "Imaging": {
+    "exitCode": 0,
+    "checks": 66,
+    "seconds": 0.803
+  },
+  "Rendering": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.818
+  },
+  "Desktop": {
+    "exitCode": 0,
+    "checks": 104,
+    "seconds": 2.599
+  },
+  "ColorProfile": {
+    "exitCode": 0,
+    "checks": 9,
+    "seconds": 0.378
+  },
+  "LittleCMS": {
+    "exitCode": 0,
+    "checks": 32,
+    "seconds": 0.426
+  },
+  "PNG16Input": {
+    "exitCode": 0,
+    "checks": 32,
+    "seconds": 0.465
+  },
+  "PNG16Export": {
+    "exitCode": 0,
+    "checks": 33,
+    "seconds": 26.548
+  },
+  "UI": {
+    "exitCode": 0,
+    "checks": 52,
+    "seconds": 5.66
+  },
+  "totalChecks": 353,
+  "scope": "macOS ARM64 streamed PNG16 and shared atomic byte-store regression; six actual RAW exports; UI headless; Windows/OS file picker/full-app memory pending"
+}

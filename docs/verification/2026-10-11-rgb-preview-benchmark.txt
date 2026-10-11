@@ -1,0 +1,2 @@
+RGB16_PREVIEW_COST: 2154x1434->600, 10 alternating pairs, expand+resize median 14.646ms / 49421480 allocated bytes; direct median 9.493ms / 40 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
+RGB16_PREVIEW_COST: 3000x2000->600, 10 alternating pairs, expand+resize median 21.829ms / 96000104 allocated bytes; direct median 10.521ms / 40 allocated bytes; input already managed, native development/copy and UI excluded, output pool warmed.
